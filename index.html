@@ -143,6 +143,33 @@
       text-decoration: underline;
     }
 
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    .badge a {
+      text-decoration: none;
+    }
+
+    .badge img {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+      background-color: #161b22;
+      padding: 0.5rem;
+      border: 1px solid #30363d;
+    }
+
+    .badge p {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #8b949e;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -215,6 +242,7 @@
         <li><a href="#certificaciones">Certificaciones</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#insignias">Insignias</a></li>
       </ul>
     </div>
   </nav>
@@ -269,6 +297,48 @@
           </p>
           <p><strong>Formato:</strong> Markdown estructurado por plataforma</p>
           <a class="github-link" href="https://github.com/tuusuario/writeups" target="_blank">Ver todos los Write-ups en GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="insignias">
+      <h2>🎖️ Insignias y Logros</h2>
+      <div class="badge-grid">
+        <div class="badge">
+          <a href="https://www.credly.com/badges/cfb91ff5-e6a1-4a33-b58c-cdf0b34354a7/public_url" target="_blank">
+            <img src="./img/budges/aws-certified-cloud-practitioner.png" alt="AWS Cloud Practitioner" />
+            <p>AWS Cloud Practitioner</p>
+          </a>
+        </div>
+        <div class="badge">
+          <a href="https://www.credly.com/badges/c294673c-145f-4d97-81d6-4734ba401be9/public_url" target="_blank">
+            <img src="./img/budges/pentesting-web.1.png" alt="TryHackMe Badge" />
+            <p>Pentesting Web</p>
+          </a>
+        </div>
+        <div class="badge">
+          <a href="https://www.credly.com/badges/6e979d31-c7c2-4cfb-8e19-0e34f3bf3b84/public_url" target="_blank">
+            <img src="./img/budges/introduccion-al-hacking-etico-y-pentesting.png" alt="TryHackMe Badge" />
+            <p>Introducción al Hacking Ético y Pentesting</p>
+          </a>
+        </div>
+        <div class="badge">
+          <a href="https://www.credly.com/badges/dd3737ac-cb03-476b-84d6-d3e04df2a065/public_url" target="_blank">
+            <img src="./img/budges/preparacion-de-campanas-de-red-team.png" alt="TryHackMe Badge" />
+            <p>Preparación de Campañas de Red Team</p>
+          </a>
+        </div>
+        <div class="badge">
+          <a href="https://www.credly.com/badges/2c97acb0-3ad1-47f5-b4d9-540e69cafbc4/public_url" target="_blank">
+            <img src="./img/budges/tecnicas-de-evasion-de-sistemas-de-seguridad-y-creacion-de-malware.png" alt="Hack The Box" />
+            <p>Técnicas de Evasión de Sistemas de Seguridad y Creación de Malware</p>
+          </a>
+        </div>
+        <div class="badge">
+          <a href="https://www.credly.com/badges/07e84ae8-bb4c-4a54-aebd-17602cfc4b7d/public_url" target="_blank">
+            <img src="./img/budges/diplomado-en-red-team.png" alt="Hack The Box" />
+            <p>Diplomado en Red Team</p>
+          </a>
         </div>
       </div>
     </section>
