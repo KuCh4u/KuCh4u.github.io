@@ -21,13 +21,33 @@
       z-index: 100;
     }
 
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .nav-title {
+      color: #58a6ff;
+      font-size: 1.2rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #c9d1d9;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 1rem;
       gap: 2rem;
+      margin: 0;
+      padding: 0;
     }
 
     nav a {
@@ -41,12 +61,12 @@
     }
 
     ul {
-        padding-left: 1.5rem;
-        line-height: 1.8;
+      padding-left: 1.5rem;
+      line-height: 1.8;
     }
 
     ul li {
-        margin-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
     }
 
     header {
@@ -142,17 +162,61 @@
       color: #58a6ff;
       text-decoration: underline;
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        display: none;
+        padding: 1rem 0;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .projects-container {
+        gap: 1rem;
+      }
+
+      footer p {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+        word-wrap: break-word;
+      }
+    }
   </style>
 </head>
 <body>
   <nav>
-    <ul>
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#objetivo">Objetivo</a></li>
-      <li><a href="#certificaciones">Certificaciones</a></li>
-      <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-    </ul>
+    <div class="nav-container">
+      <span class="nav-title">Portafolio</span>
+      <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="nav-menu">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#objetivo">Objetivo</a></li>
+        <li><a href="#certificaciones">Certificaciones</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+      </ul>
+    </div>
   </nav>
 
   <header>
@@ -178,41 +242,36 @@
 
     <section id="certificaciones">
       <h2>Certificación destacada</h2>
-      <p>
-        <p><span class="highlight">AWS Certified Cloud Practitioner</span> – Junio 2023</p>
-        <p><span class="highlight">Diplomado en Red Team</span> – USACH (Jul 2024 - Feb 2025)</p>
-        <p><span class="highlight">Interpretación y Análisis de Requisitos ISO 27001:2022</span> – Universidad de Chile (Oct 2024)</p>
-      </p>
+      <p><span class="highlight">AWS Certified Cloud Practitioner</span> – Junio 2023</p>
+      <p><span class="highlight">Diplomado en Red Team</span> – USACH (Jul 2024 - Feb 2025)</p>
+      <p><span class="highlight">Interpretación y Análisis de Requisitos ISO 27001:2022</span> – Universidad de Chile (Oct 2024)</p>
     </section>
 
     <section id="habilidades">
-        <h2>Habilidades Técnicas</h2>
-      
-        <ul>
-          <li><strong>Lenguajes & Scripting:</strong> Python, Bash, PowerShell</li>
-          <li><strong>Herramientas de Hacking:</strong> Nmap, Burp Suite, Hydra, sqlmap, Gobuster, Nikto, Metasploit</li>
-          <li><strong>Técnicas y vulnerabilidades:</strong> Escalación de privilegios, RCE, SQL Injection, XSS, LFI/RFI, evasión de antivirus</li>
-          <li><strong>Redes y Seguridad:</strong> Firewalls, análisis de puertos, administración de redes</li>
-          <li><strong>Frameworks y estándares:</strong> MITRE ATT&CK, OWASP Top 10, ISO/IEC 27001:2022</li>
-        </ul>
+      <h2>Habilidades Técnicas</h2>
+      <ul>
+        <li><strong>Lenguajes & Scripting:</strong> Python, Bash, PowerShell</li>
+        <li><strong>Herramientas de Hacking:</strong> Nmap, Burp Suite, Hydra, sqlmap, Gobuster, Nikto, Metasploit</li>
+        <li><strong>Técnicas y vulnerabilidades:</strong> Escalación de privilegios, RCE, SQL Injection, XSS, LFI/RFI, evasión de antivirus</li>
+        <li><strong>Redes y Seguridad:</strong> Firewalls, análisis de puertos, administración de redes</li>
+        <li><strong>Frameworks y estándares:</strong> MITRE ATT&CK, OWASP Top 10, ISO/IEC 27001:2022</li>
+      </ul>
     </section>
 
     <section id="proyectos">
-        <h2>Proyectos de Seguridad</h2>
-      
-        <div class="projects-container">
-          <div class="project-card">
-            <h3>📓 Repositorio de Write-ups</h3>
-            <p>
-              Recopilación de análisis técnicos realizados sobre laboratorios de seguridad como <span class="highlight">HTB</span>, <span class="highlight">TryHackMe</span>, <span class="highlight">VulnHub</span>, y <span class="highlight">DockerLabs</span>.
-              Incluye detalles de vulnerabilidades, herramientas utilizadas y recomendaciones de mitigación.
-            </p>
-            <p><strong>Formato:</strong> Markdown estructurado por plataforma</p>
-            <a class="github-link" href="https://github.com/KuCh4u/write-ups.git" target="_blank">Ver todos los Write-ups en GitHub</a>
-          </div>
+      <h2>Proyectos de Seguridad</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>📓 Repositorio de Write-ups</h3>
+          <p>
+            Recopilación de análisis técnicos realizados sobre laboratorios de seguridad como <span class="highlight">HTB</span>, <span class="highlight">TryHackMe</span>, <span class="highlight">VulnHub</span>, y <span class="highlight">DockerLabs</span>.
+            Incluye detalles de vulnerabilidades, herramientas utilizadas y recomendaciones de mitigación.
+          </p>
+          <p><strong>Formato:</strong> Markdown estructurado por plataforma</p>
+          <a class="github-link" href="https://github.com/tuusuario/writeups" target="_blank">Ver todos los Write-ups en GitHub</a>
         </div>
-      </section>
-      
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -223,5 +282,12 @@
       <a href="https://www.linkedin.com/in/nicolas-cartagena-88192526a/" target="_blank">LinkedIn</a>
     </p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav-menu");
+      nav.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
