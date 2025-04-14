@@ -1,37 +1,29 @@
 # 🧠 Portafolio de Ciberseguridad – Nicolas Cartagena
 
-Bienvenido a mi portafolio personal enfocado en **ciberseguridad ofensiva** y **hacking ético**. Este sitio web fue creado con HTML y CSS puros, y está diseñado como una landing page sobria, responsiva y profesional.
+Este repositorio contiene mi portafolio personal de ciberseguridad ofensiva, desarrollado como landing page en HTML y CSS puros. Aquí presento mis habilidades, certificaciones, write-ups y logros relacionados con el hacking ético.
 
-🔗 **Sitio en vivo:** [Ver portafolio](https://tuusuario.github.io/)
+🔗 **Sitio en vivo:** [https://KuCh4u.github.io](https://KuCh4u.github.io)
 
-## 🚀 Sobre el portafolio
+---
 
-El objetivo de este portafolio es presentar de manera clara mis habilidades, experiencia y proyectos relacionados con:
+## 📌 Contenido del sitio
 
-- Análisis de vulnerabilidades
-- Pentesting web
-- Técnicas de escalación de privilegios
-- Uso de herramientas ofensivas (Burp Suite, Nmap, Hydra, etc.)
-- Frameworks como MITRE ATT&CK y OWASP Top 10
+- **Sobre mí** – Quién soy y mi enfoque profesional
+- **Objetivo profesional** – Mi meta como especialista ofensivo
+- **Certificaciones** – AWS, Diplomado Red Team, ISO 27001
+- **Habilidades técnicas** – Lenguajes, herramientas, técnicas
+- **Proyectos** – Repositorio de write-ups estructurado por plataforma
+- **Insignias y logros** – Badges visuales de plataformas y cursos
+- **Contacto** – Enlaces directos a GitHub, correo y LinkedIn
 
 ---
 
 ## 🧰 Tecnologías utilizadas
 
 - HTML5
-- CSS3 (Responsive Design)
+- CSS3 (responsive design)
 - Google Fonts (Fira Code)
-- JavaScript (para menú hamburguesa)
-
----
-
-## 📁 Contenido del sitio
-
-- `Sobre mí` – Quién soy y qué me apasiona
-- `Objetivo profesional` – Mi meta en el mundo del Red Team
-- `Certificaciones` – AWS, Diplomado Red Team, ISO 27001
-- `Habilidades técnicas` – Herramientas, técnicas y estándares
-- `Proyectos` – Incluye acceso al [repositorio de write-ups](https://github.com/tuusuario/writeups)
+- JavaScript (menú hamburguesa)
 
 ---
 
@@ -40,3 +32,7 @@ El objetivo de este portafolio es presentar de manera clara mis habilidades, exp
 - Email: [nicolas.a.cartagena.m@gmail.com](mailto:nicolas.a.cartagena.m@gmail.com)
 - GitHub: [@KuCh4u](https://github.com/KuCh4u)
 - LinkedIn: [Nicolas Cartagena](https://www.linkedin.com/in/nicolas-cartagena-88192526a/)
+
+---
+
+> 🛡️ Proyecto con fines educativos. Todos los contenidos están orientados a reforzar mis habilidades como profesional en ciberseguridad ofensiva.
