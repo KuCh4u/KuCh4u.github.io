@@ -1,0 +1,112 @@
+---
+interface ProjectItem {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  status: string;
+  link: string | null;
+}
+
+interface Props {
+  projects: { heading: string; kicker: string; note: string; items: ProjectItem[] };
+}
+
+const { projects } = Astro.props;
+---
+
+<section id="projects" class="section projects" aria-labelledby="projects-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-kicker">{projects.kicker}</span>
+      <h2 class="section-title" id="projects-heading">{projects.heading}</h2>
+      <p class="projects__note">{projects.note}</p>
+    </div>
+
+    <div class="projects__grid">
+      {
+        projects.items.map((item, i) => {
+          const isPlaceholder = item.tags.length === 0;
+          return (
+            <article
+              class={`card project-card ${isPlaceholder ? 'card-disabled' : ''}`}
+              data-reveal
+              style={`transition-delay:${Math.min(i, 3) * 60}ms`}
+            >
+              <div class="project-card__head">
+                <h3 class="project-card__title card-disabled-title">{item.title}</h3>
+                <span class={`badge ${isPlaceholder ? 'badge--dashed' : 'badge--neutral'}`}>
+                  {item.status}
+                </span>
+              </div>
+              <p class="project-card__description">{item.description}</p>
+              {item.tags.length > 0 && (
+                <ul class="project-card__tags">
+                  {item.tags.map((tag) => (
+                    <li class="tag">{tag}</li>
+                  ))}
+                </ul>
+              )}
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects__note {
+    margin-top: var(--space-3);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .projects__grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 768px) {
+    .projects__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+  }
+
+  .project-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+
+  .project-card__title {
+    font-size: var(--text-xl);
+  }
+
+  .project-card__description {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+    flex: 1;
+  }
+
+  .project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+</style>

@@ -1,0 +1,370 @@
+---
+import Icon from './Icon.astro';
+import type { UiStrings } from '../data/ui-strings';
+
+interface Props {
+  hero: {
+    eyebrow: string;
+    headline: string;
+    subtitle: string;
+    highlightBadge: string;
+    ctaPrimary: { label: string; href: string };
+    ctaSecondary: { label: string; href: string };
+    location: string;
+  };
+  name: string;
+  email: string;
+  social: { linkedin: string; github: string };
+  offensiveTools: string[];
+  ui: UiStrings;
+}
+
+const { hero, name, email, social, offensiveTools, ui } = Astro.props;
+const toolsLine = offensiveTools.slice(0, 6).join(', ');
+---
+
+<section id="home" class="hero" aria-label={name}>
+  <div class="dot-grid-bg" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <p class="hero__kicker">
+        <span aria-hidden="true">$ </span>{ui.whoami}
+      </p>
+      <h1 class="hero__name">{name}</h1>
+      <p class="hero__role" data-typing data-full-text={hero.eyebrow}>
+        <span class="hero__role-text">{hero.eyebrow}</span><span class="hero__cursor" aria-hidden="true"></span>
+      </p>
+      <p class="hero__headline">{hero.headline}</p>
+      <p class="hero__subtitle">{hero.subtitle}</p>
+
+      <a href="#certifications" class="hero__badge">
+        <Icon name="check-circle" size={16} />
+        {hero.highlightBadge}
+      </a>
+
+      <div class="hero__ctas">
+        <a href={hero.ctaPrimary.href} class="btn btn-primary">{hero.ctaPrimary.label}</a>
+        <a href={hero.ctaSecondary.href} class="btn btn-secondary">{hero.ctaSecondary.label}</a>
+      </div>
+
+      <div class="hero__meta">
+        <div class="hero__contacts">
+          <a href={`mailto:${email}`} aria-label="Email">
+            <Icon name="email" size={18} />
+          </a>
+          <a href={social.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn (${ui.opensNewTab})`}>
+            <Icon name="linkedin" size={18} />
+          </a>
+          <a href={social.github} target="_blank" rel="noopener noreferrer" aria-label={`GitHub (${ui.opensNewTab})`}>
+            <Icon name="github" size={18} />
+          </a>
+        </div>
+        <span class="hero__location">{hero.location}</span>
+      </div>
+    </div>
+
+    <div class="hero__terminal" aria-hidden="true">
+      <div class="terminal-window">
+        <div class="terminal-window__head">
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-window__title">{ui.heroTerminalTitle}</span>
+        </div>
+        <div class="terminal-window__body">
+          <p><span class="terminal-prompt">$</span> {ui.whoami}</p>
+          <p class="terminal-output">{name} — {hero.eyebrow}</p>
+          <p><span class="terminal-prompt">$</span> {ui.catStack}</p>
+          <p class="terminal-output">{toolsLine}</p>
+          <p><span class="terminal-prompt">$</span> <span class="terminal-blink">_</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll-cue" aria-hidden="true">
+    <span>{ui.scrollCue}</span>
+    <Icon name="chevron-down" size={18} />
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding-block: var(--space-16) var(--space-16);
+    overflow: hidden;
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      padding-block: var(--space-20) var(--space-24);
+    }
+  }
+
+  .hero__grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: var(--space-10);
+  }
+
+  @media (min-width: 1024px) {
+    .hero__grid {
+      grid-template-columns: 3fr 2fr;
+      align-items: center;
+      gap: var(--space-12);
+    }
+  }
+
+  .hero__kicker {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--accent-info);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__name {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .hero__role {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    color: var(--accent-primary);
+    margin-bottom: var(--space-4);
+    min-height: 1.5em;
+  }
+
+  .hero__cursor {
+    display: inline-block;
+    width: 0.55ch;
+    height: 1em;
+    margin-left: 2px;
+    background: var(--accent-primary);
+    vertical-align: -0.15em;
+  }
+
+  .hero__cursor.is-blinking {
+    animation: blink 1s step-end infinite;
+  }
+
+  .hero__cursor.is-done {
+    display: none;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .hero__headline {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    max-width: 42ch;
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    max-width: 60ch;
+    margin-bottom: var(--space-6);
+  }
+
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent-success);
+    background: color-mix(in srgb, var(--accent-success) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-success) 30%, transparent);
+    border-radius: var(--radius-full);
+    padding: 6px 14px;
+    text-decoration: none;
+    margin-bottom: var(--space-6);
+  }
+
+  .hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+  }
+
+  .hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  .hero__contacts {
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .hero__contacts a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    transition: color var(--dur-fast) var(--ease-standard);
+  }
+
+  .hero__contacts a:hover {
+    color: var(--accent-primary);
+  }
+
+  .hero__location {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+  }
+
+  .hero__terminal {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .hero__terminal {
+      display: block;
+    }
+  }
+
+  .terminal-window {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+
+  .terminal-window__head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-surface-2);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-strong);
+  }
+
+  .terminal-window__title {
+    margin-left: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .terminal-window__body {
+    padding: var(--space-5);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    line-height: var(--leading-mono);
+  }
+
+  .terminal-window__body p {
+    margin-bottom: var(--space-2);
+    word-break: break-word;
+  }
+
+  .terminal-prompt {
+    color: var(--accent-info);
+  }
+
+  .terminal-output {
+    color: var(--text-secondary);
+    padding-left: var(--space-4);
+  }
+
+  .terminal-blink {
+    animation: blink 1s step-end infinite;
+    color: var(--accent-info);
+  }
+
+  .hero__scroll-cue {
+    position: relative;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    margin-top: var(--space-12);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    animation: bob 2s ease-in-out infinite;
+  }
+
+  @media (min-width: 640px) {
+    .hero__scroll-cue {
+      display: flex;
+    }
+  }
+
+  @keyframes bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__scroll-cue {
+      animation: none;
+    }
+    .terminal-blink {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const roleEl = document.querySelector<HTMLElement>('[data-typing]');
+  const cursor = roleEl?.querySelector<HTMLElement>('.hero__cursor');
+  const textEl = roleEl?.querySelector<HTMLElement>('.hero__role-text');
+
+  if (roleEl && textEl && !reduceMotion) {
+    const fullText = roleEl.getAttribute('data-full-text') || textEl.textContent || '';
+    textEl.textContent = '';
+    cursor?.classList.add('is-blinking');
+    let i = 0;
+    const typeNext = () => {
+      if (i >= fullText.length) {
+        cursor?.classList.remove('is-blinking');
+        return;
+      }
+      textEl.textContent += fullText.charAt(i);
+      i += 1;
+      const delay = 35 + Math.random() * 20;
+      window.setTimeout(typeNext, delay);
+    };
+    window.setTimeout(typeNext, 300);
+  } else {
+    cursor?.classList.add('is-done');
+  }
+</script>

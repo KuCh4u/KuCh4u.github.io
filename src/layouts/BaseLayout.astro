@@ -1,0 +1,159 @@
+---
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/500.css';
+import '../styles/tokens.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RevealObserver from '../components/RevealObserver.astro';
+import { getTranslations, shared, type Locale } from '../utils/i18n';
+import { getUiStrings } from '../data/ui-strings';
+
+interface Props {
+  locale: Locale;
+  /** Ruta ES real de esta pagina (o el fallback mas cercano si no aplica). */
+  esPath: string;
+  /** Ruta EN real de esta pagina (o el fallback mas cercano si no aplica). */
+  enPath: string;
+  /** false si la version ES exacta no existe (ej. post de blog sin par). */
+  esAvailable?: boolean;
+  /** false si la version EN exacta no existe (ej. post de blog sin par). */
+  enAvailable?: boolean;
+  seoTitle?: string;
+  seoDescription?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+const {
+  locale,
+  esPath,
+  enPath,
+  esAvailable = true,
+  enAvailable = true,
+  seoTitle,
+  seoDescription,
+  ogTitle,
+  ogDescription,
+} = Astro.props;
+
+const t = getTranslations(locale);
+const ui = getUiStrings(locale);
+
+const title = seoTitle ?? t.seo.title;
+const description = seoDescription ?? t.seo.metaDescription;
+const socialTitle = ogTitle ?? t.seo.ogTitle;
+const socialDescription = ogDescription ?? t.seo.ogDescription;
+
+const currentPath = locale === 'es' ? esPath : enPath;
+const canonicalUrl = new URL(currentPath, Astro.site);
+const esUrl = new URL(esPath, Astro.site);
+const enUrl = new URL(enPath, Astro.site);
+const defaultUrl = esAvailable ? esUrl : enUrl;
+const ogImage = new URL('img/logo.jpg', Astro.site);
+
+const themeLabels = { light: ui.themeToLight, dark: ui.themeToDark };
+---
+
+<!doctype html>
+<html lang={locale} class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl.toString()} />
+    {esAvailable && <link rel="alternate" hreflang="es" href={esUrl.toString()} />}
+    {enAvailable && <link rel="alternate" hreflang="en" href={enUrl.toString()} />}
+    <link rel="alternate" hreflang="x-default" href={defaultUrl.toString()} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={socialDescription} />
+    <meta property="og:url" content={canonicalUrl.toString()} />
+    <meta property="og:locale" content={locale === 'es' ? 'es_CL' : 'en_US'} />
+    <meta property="og:image" content={ogImage.toString()} />
+    <meta property="og:image:alt" content={socialTitle} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={socialDescription} />
+    <meta name="twitter:image" content={ogImage.toString()} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0a0e14" />
+    <meta name="color-scheme" content="dark light" />
+
+    <script is:inline>
+      (function () {
+        try {
+          var s = localStorage.getItem('theme');
+          var t =
+            s === 'light' || s === 'dark'
+              ? s
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark';
+          if (t === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        } catch (e) {
+          /* no-op */
+        }
+        document.documentElement.classList.remove('no-js');
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">{ui.skipLink}</a>
+
+    <Header
+      locale={locale}
+      nav={t.nav}
+      name={shared.name}
+      themeLabels={themeLabels}
+      ui={ui}
+      esHref={esPath}
+      enHref={enPath}
+      esAvailable={esAvailable}
+      enAvailable={enAvailable}
+      unavailableTitle={ui.noTranslation}
+    />
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <Footer
+      locale={locale}
+      name={shared.name}
+      nav={t.nav}
+      social={shared.social}
+      email={shared.email}
+      ui={ui}
+    />
+
+    {
+      locale === 'es' && enAvailable && (
+        <script is:inline define:vars={{ enPath }}>
+          (function () {
+            try {
+              if (localStorage.getItem('lang-pref')) return;
+              var nav = navigator.language || '';
+              if (!nav.toLowerCase().startsWith('es')) {
+                window.location.replace(enPath);
+              }
+            } catch (e) {
+              /* no-op */
+            }
+          })();
+        </script>
+      )
+    }
+
+    <RevealObserver />
+  </body>
+</html>

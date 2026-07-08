@@ -1,0 +1,263 @@
+---
+import type { UiStrings } from '../data/ui-strings';
+
+interface Achievement {
+  text: string;
+  highlight: boolean;
+}
+
+interface ExperienceItem {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  summary: string;
+  achievements: Achievement[];
+}
+
+interface Props {
+  experience: { heading: string; kicker: string; items: ExperienceItem[] };
+  ui: UiStrings;
+}
+
+const { experience, ui } = Astro.props;
+
+// Cifras reales del brief (reducción de hallazgos críticos 37% -> 15% en 12
+// meses) usadas únicamente para dimensionar la barra decorativa aria-hidden.
+const STAT_BEFORE = 37;
+const STAT_AFTER = 15;
+---
+
+<section id="experience" class="section experience" aria-labelledby="experience-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-kicker">{experience.kicker}</span>
+      <h2 class="section-title" id="experience-heading">{experience.heading}</h2>
+    </div>
+
+    <ol class="timeline">
+      {
+        experience.items.map((item) => {
+          const highlighted = item.achievements.find((a) => a.highlight);
+          const normal = item.achievements.filter((a) => !a.highlight);
+          return (
+            <li class="timeline__item" data-reveal>
+              <span class="timeline__node" aria-hidden="true" />
+              <div class="timeline__content">
+                <header class="timeline__head">
+                  <h3 class="timeline__role">
+                    {item.role} <span class="timeline__at">@ {item.company}</span>
+                  </h3>
+                  <p class="timeline__period">{item.period} · {item.location}</p>
+                </header>
+                <p class="timeline__summary">{item.summary}</p>
+
+                {highlighted && (
+                  <div class="stat-card">
+                    <div class="stat-card__bars" aria-hidden="true">
+                      <div class="stat-bar">
+                        <span class="stat-bar__label">{ui.statBefore}</span>
+                        <div class="stat-bar__track">
+                          <div class="stat-bar__fill stat-bar__fill--before" style={`width:${STAT_BEFORE * 2}%`} />
+                        </div>
+                        <span class="stat-bar__value">{STAT_BEFORE}%</span>
+                      </div>
+                      <div class="stat-bar">
+                        <span class="stat-bar__label">{ui.statAfter}</span>
+                        <div class="stat-bar__track">
+                          <div
+                            class="stat-bar__fill stat-bar__fill--after"
+                            data-stat-fill
+                            data-target={STAT_AFTER * 2}
+                            style="width:0%"
+                          />
+                        </div>
+                        <span class="stat-bar__value">{STAT_AFTER}%</span>
+                      </div>
+                    </div>
+                    <p class="stat-card__text">{highlighted.text}</p>
+                  </div>
+                )}
+
+                <ul class="timeline__achievements">
+                  {normal.map((a) => (
+                    <li>{a.text}</li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    padding-left: var(--space-6);
+    border-left: 2px solid var(--border-strong);
+  }
+
+  .timeline__item {
+    position: relative;
+  }
+
+  .timeline__node {
+    position: absolute;
+    left: calc(var(--space-6) * -1 - 5px);
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    box-shadow: 0 0 0 4px var(--bg-base);
+  }
+
+  .timeline__role {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-1);
+  }
+
+  .timeline__at {
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .timeline__period {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .timeline__summary {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-5);
+    max-width: 65ch;
+  }
+
+  .timeline__achievements {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .timeline__achievements li {
+    position: relative;
+    padding-left: var(--space-5);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+  }
+
+  .timeline__achievements li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-info);
+  }
+
+  .stat-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+
+  .stat-card__bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  .stat-bar {
+    display: grid;
+    grid-template-columns: 56px 1fr 44px;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .stat-bar__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .stat-bar__track {
+    height: 10px;
+    background: var(--bg-surface-3);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+
+  .stat-bar__fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+  }
+
+  .stat-bar__fill--before {
+    background: var(--accent-warning);
+  }
+
+  .stat-bar__fill--after {
+    background: var(--accent-success);
+    transition: width var(--dur-slow) var(--ease-out);
+  }
+
+  .stat-bar__value {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: right;
+  }
+
+  .stat-card__text {
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+</style>
+
+<script>
+  const fills = document.querySelectorAll<HTMLElement>('[data-stat-fill]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (fills.length) {
+    if (reduceMotion) {
+      fills.forEach((el) => {
+        el.style.width = `${el.getAttribute('data-target')}%`;
+      });
+    } else if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement;
+              el.style.width = `${el.getAttribute('data-target')}%`;
+              obs.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      fills.forEach((el) => observer.observe(el));
+    } else {
+      fills.forEach((el) => {
+        el.style.width = `${el.getAttribute('data-target')}%`;
+      });
+    }
+  }
+</script>

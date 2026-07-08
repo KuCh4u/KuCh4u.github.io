@@ -1,0 +1,60 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+import { getTranslations, shared, pathFor } from '../../utils/i18n';
+
+export async function getStaticPaths() {
+  const esPosts = (
+    await getCollection('blog', (entry) => entry.data.lang === 'es' && !entry.data.draft)
+  ).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+  const enPosts = await getCollection('blog', (entry) => entry.data.lang === 'en' && !entry.data.draft);
+
+  return esPosts.map((post, i) => {
+    const translation = enPosts.find((p) => p.data.translationKey === post.data.translationKey) ?? null;
+    return {
+      params: { slug: post.id },
+      props: {
+        post,
+        prevEntry: esPosts[i - 1] ?? null,
+        nextEntry: esPosts[i + 1] ?? null,
+        translation,
+      },
+    };
+  });
+}
+
+const { post, prevEntry, nextEntry, translation } = Astro.props;
+const { Content } = await render(post);
+const locale = 'es' as const;
+const t = getTranslations(locale);
+
+const esPath = pathFor('es', `/blog/${post.id}`);
+const enPath = translation ? pathFor('en', `/blog/${translation.id}`) : pathFor('en', '/blog');
+
+const prev = prevEntry
+  ? { href: pathFor('es', `/blog/${prevEntry.id}`), title: prevEntry.data.title }
+  : null;
+const next = nextEntry
+  ? { href: pathFor('es', `/blog/${nextEntry.id}`), title: nextEntry.data.title }
+  : null;
+---
+
+<BaseLayout
+  locale={locale}
+  esPath={esPath}
+  enPath={enPath}
+  enAvailable={!!translation}
+  seoTitle={`${post.data.title} — ${shared.name}`}
+  seoDescription={post.data.description}
+>
+  <BlogPost
+    post={post}
+    Content={Content}
+    locale={locale}
+    blogHref={pathFor('es', '/blog')}
+    prev={prev}
+    next={next}
+    blog={t.blog}
+  />
+</BaseLayout>

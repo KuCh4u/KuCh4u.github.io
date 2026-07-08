@@ -1,0 +1,27 @@
+{/*
+  Observador global de scroll-reveal. Cualquier elemento con `data-reveal`
+  aparece con fade + translateY al entrar en el viewport. Con
+  prefers-reduced-motion, global.css ya deja todo visible sin animación,
+  así que este script simplemente no hace nada perceptible en ese caso.
+*/}
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = document.querySelectorAll<HTMLElement>('[data-reveal]');
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    items.forEach((el) => el.classList.add('is-visible'));
+  } else {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    items.forEach((el) => observer.observe(el));
+  }
+</script>

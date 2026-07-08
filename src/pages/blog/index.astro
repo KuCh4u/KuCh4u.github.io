@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogIndexPage from '../../components/BlogIndexPage.astro';
+import { getTranslations, shared } from '../../utils/i18n';
+
+const locale = 'es' as const;
+const t = getTranslations(locale);
+const seoTitle = `${t.blog.heading} — ${shared.name}`;
+---
+
+<BaseLayout locale={locale} esPath="/blog" enPath="/en/blog" seoTitle={seoTitle} seoDescription={t.blog.intro}>
+  <BlogIndexPage locale={locale} blog={t.blog} />
+</BaseLayout>

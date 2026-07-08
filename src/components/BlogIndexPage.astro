@@ -1,0 +1,152 @@
+---
+import { getCollection } from 'astro:content';
+import Icon from './Icon.astro';
+import { pathFor, type Locale } from '../utils/i18n';
+import { readingTime } from '../utils/reading-time';
+
+interface Props {
+  locale: Locale;
+  blog: {
+    heading: string;
+    kicker: string;
+    intro: string;
+    readingTime: string;
+    emptyState: string;
+    tagsLabel: string;
+  };
+}
+
+const { locale, blog } = Astro.props;
+
+const posts = (await getCollection('blog', (entry) => entry.data.lang === locale && !entry.data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const dateFormatter = new Intl.DateTimeFormat(locale === 'es' ? 'es-CL' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<section class="section blog-index" aria-labelledby="blog-index-heading">
+  <div class="container">
+    <header class="blog-index__head">
+      <span class="section-kicker">{blog.kicker}</span>
+      <h1 class="section-title" id="blog-index-heading">{blog.heading}</h1>
+      <p class="blog-index__intro">{blog.intro}</p>
+    </header>
+
+    {
+      posts.length === 0 ? (
+        <p class="blog-index__empty">{blog.emptyState}</p>
+      ) : (
+        <ul class="blog-index__list">
+          {posts.map((post) => (
+            <li>
+              <a href={pathFor(locale, `/blog/${post.id}`)} class="card card-interactive blog-index__card">
+                <p class="blog-index__date">{dateFormatter.format(post.data.pubDate)}</p>
+                <h2>{post.data.title}</h2>
+                <p class="blog-index__description">{post.data.description}</p>
+                <div class="blog-index__footer">
+                  <span class="blog-index__reading-time">
+                    <Icon name="clock" size={14} />
+                    {readingTime(post.body ?? '')} {blog.readingTime}
+                  </span>
+                  {post.data.tags.length > 0 && (
+                    <ul class="blog-index__tags">
+                      {post.data.tags.map((tag: string) => (
+                        <li class="tag">{tag}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .blog-index__head {
+    max-width: 65ch;
+    margin-bottom: var(--space-10);
+  }
+
+  .blog-index__intro {
+    margin-top: var(--space-3);
+    color: var(--text-secondary);
+  }
+
+  .blog-index__empty {
+    padding: var(--space-12);
+    text-align: center;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    border: 1px dashed var(--border-subtle);
+    border-radius: var(--radius-lg);
+  }
+
+  .blog-index__list {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 768px) {
+    .blog-index__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .blog-index__card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+  }
+
+  .blog-index__date {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: var(--space-2);
+  }
+
+  .blog-index__card h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .blog-index__description {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+  }
+
+  .blog-index__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .blog-index__reading-time {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .blog-index__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+</style>

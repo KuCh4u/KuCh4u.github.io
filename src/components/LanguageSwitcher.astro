@@ -1,0 +1,107 @@
+---
+import type { Locale } from '../utils/i18n';
+
+interface Props {
+  locale: Locale;
+  /** Href a la version ES de esta pagina (o el fallback mas cercano, ej. indice del blog). */
+  esHref: string;
+  /** Href a la version EN de esta pagina (o el fallback mas cercano). */
+  enHref: string;
+  /** false si la traduccion exacta de ES no existe (se usa un fallback en esHref). */
+  esAvailable?: boolean;
+  /** false si la traduccion exacta de EN no existe (se usa un fallback en enHref). */
+  enAvailable?: boolean;
+  /** Texto accesible para cuando el href es un fallback, no la traduccion exacta. */
+  unavailableTitle?: string;
+}
+
+const {
+  locale,
+  esHref,
+  enHref,
+  esAvailable = true,
+  enAvailable = true,
+  unavailableTitle,
+} = Astro.props;
+---
+
+<div class="lang-switch" role="group" aria-label="Seleccionar idioma / Select language">
+  <a
+    href={esHref}
+    class="lang-switch__item"
+    aria-current={locale === 'es' ? 'true' : undefined}
+    title={!esAvailable ? unavailableTitle : undefined}
+    data-lang-link="es"
+    lang="es"
+  >
+    ES
+  </a>
+  <a
+    href={enHref}
+    class="lang-switch__item"
+    aria-current={locale === 'en' ? 'true' : undefined}
+    title={!enAvailable ? unavailableTitle : undefined}
+    data-lang-link="en"
+    lang="en"
+  >
+    EN
+  </a>
+</div>
+
+<style>
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: var(--bg-surface-2);
+    border-radius: var(--radius-full);
+    padding: var(--space-1);
+  }
+
+  .lang-switch__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    min-height: 32px;
+    padding-inline: var(--space-2);
+    border-radius: var(--radius-full);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition:
+      background-color var(--dur-fast) var(--ease-standard),
+      color var(--dur-fast) var(--ease-standard);
+  }
+
+  .lang-switch__item:hover {
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--bg-surface-3) 50%, transparent);
+  }
+
+  .lang-switch__item[aria-current='true'] {
+    background: var(--bg-surface-3);
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  // Progressive enhancement: recuerda la elección manual del usuario para
+  // que el auto-detect por navegador no lo contradiga en visitas futuras.
+  document.querySelectorAll<HTMLAnchorElement>('[data-lang-link]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const lang = link.getAttribute('data-lang-link');
+      if (lang) {
+        try {
+          localStorage.setItem('lang-pref', lang);
+        } catch (e) {
+          /* no-op */
+        }
+      }
+    });
+  });
+</script>

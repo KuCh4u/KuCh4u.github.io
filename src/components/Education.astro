@@ -1,0 +1,82 @@
+---
+import Icon from './Icon.astro';
+import type { UiStrings } from '../data/ui-strings';
+
+interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  detail: string | null;
+}
+
+interface Props {
+  education: { heading: string; items: EducationItem[] };
+  ui: UiStrings;
+}
+
+const { education, ui } = Astro.props;
+---
+
+<section id="education" class="section section-surface education" aria-labelledby="education-heading">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title" id="education-heading">{education.heading}</h2>
+    </div>
+
+    <div class="education__grid">
+      {
+        education.items.map((item, i) => (
+          <article class="card education-card" data-reveal style={`transition-delay:${Math.min(i, 3) * 60}ms`}>
+            <span class="badge badge--success">
+              <Icon name="check-circle" size={12} />
+              {ui.completed}
+            </span>
+            <h3>{item.degree}</h3>
+            <p class="education-card__institution">{item.institution}</p>
+            <p class="education-card__period">{item.period}</p>
+            {item.detail && <p class="education-card__detail">{item.detail}</p>}
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .education__grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 768px) {
+    .education__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .education-card span.badge {
+    margin-bottom: var(--space-3);
+  }
+
+  .education-card h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .education-card__institution {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-1);
+  }
+
+  .education-card__period {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+  }
+
+  .education-card__detail {
+    margin-top: var(--space-3);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+  }
+</style>

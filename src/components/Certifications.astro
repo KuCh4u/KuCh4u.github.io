@@ -1,0 +1,367 @@
+---
+import Icon from './Icon.astro';
+import { resolveShared } from '../data/ui-strings';
+import type { UiStrings } from '../data/ui-strings';
+
+interface ListItem {
+  name: string;
+  issuer: string;
+  date: string;
+}
+
+interface BadgeItem {
+  id: string;
+  title: string;
+  alt: string;
+}
+
+interface CtfItem {
+  name: string;
+  result: string;
+  detail: string | null;
+  certificateAsset?: string;
+}
+
+interface Props {
+  certifications: {
+    heading: string;
+    kicker: string;
+    featured: {
+      name: string;
+      issuer: string;
+      date: string;
+      credentialId: string;
+      description: string;
+      certificateAsset: string;
+    };
+    list: ListItem[];
+    badges: BadgeItem[];
+    ctf: { heading: string; items: CtfItem[] };
+  };
+  shared: Record<string, any>;
+  ui: UiStrings;
+  imagesAlt: { ejptCertificate: string; ctfCertificate: string };
+}
+
+const { certifications, shared, ui, imagesAlt } = Astro.props;
+const featured = certifications.featured;
+const featuredPdf = resolveShared(featured.certificateAsset, shared);
+const credlyProfile = shared.social.credly;
+---
+
+<section id="certifications" class="section certifications" aria-labelledby="certifications-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-kicker">{certifications.kicker}</span>
+      <h2 class="section-title" id="certifications-heading">{certifications.heading}</h2>
+    </div>
+
+    <article class="card card-featured featured-cert" data-reveal>
+      <div class="featured-cert__main">
+        <span class="badge badge--success badge--pulse-once featured-cert__badge">
+          <Icon name="check-circle" size={14} />
+          {ui.obtained}
+        </span>
+        <h3 class="featured-cert__name">{featured.name}</h3>
+        <p class="featured-cert__issuer">{featured.issuer}</p>
+        <p class="featured-cert__description">{featured.description}</p>
+      </div>
+      <div class="featured-cert__meta">
+        <dl>
+          <div>
+            <dt>{ui.credentialId}</dt>
+            <dd>{featured.credentialId}</dd>
+          </div>
+          <div>
+            <dt><Icon name="calendar" size={14} /> <span class="sr-only">Date</span></dt>
+            <dd>{featured.date}</dd>
+          </div>
+        </dl>
+        <a
+          href={featuredPdf}
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${imagesAlt.ejptCertificate} (${ui.opensNewTab})`}
+        >
+          <Icon name="download" size={16} />
+          {ui.viewPdf}
+        </a>
+      </div>
+    </article>
+
+    <div class="certifications__secondary">
+      {
+        certifications.list.map((cert, i) => (
+          <article class="card cert-mini" data-reveal style={`transition-delay:${Math.min(i, 3) * 60}ms`}>
+            <h4>{cert.name}</h4>
+            <p class="cert-mini__issuer">{cert.issuer}</p>
+            <p class="cert-mini__date">{cert.date}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="certifications__badges" data-reveal>
+      {
+        certifications.badges.map((badge) => (
+          <a
+            href={credlyProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="badge-tile"
+            aria-label={`${badge.alt} — Credly (${ui.opensNewTab})`}
+          >
+            <img
+              src={resolveShared(`shared.assets.badges.${badge.id}`, shared)}
+              alt={badge.alt}
+              loading="lazy"
+              width="120"
+              height="120"
+            />
+            <Icon name="external" size={12} class="badge-tile__external" />
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="certifications__ctf">
+      <h3 class="certifications__ctf-heading">{certifications.ctf.heading}</h3>
+      <div class="ctf-grid">
+        {
+          certifications.ctf.items.map((item, i) => (
+            <article class="card ctf-card" data-reveal style={`transition-delay:${Math.min(i, 3) * 60}ms`}>
+              <h4>{item.name}</h4>
+              <p class="ctf-card__result">{item.result}</p>
+              {item.detail && <p class="ctf-card__detail">{item.detail}</p>}
+              {item.certificateAsset && (
+                <a
+                  href={resolveShared(item.certificateAsset, shared)}
+                  class="ctf-card__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${imagesAlt.ctfCertificate} (${ui.opensNewTab})`}
+                >
+                  <Icon name="download" size={14} />
+                  {ui.viewPdf}
+                </a>
+              )}
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured-cert {
+    display: grid;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  @media (min-width: 1024px) {
+    .featured-cert {
+      grid-template-columns: 3fr 2fr;
+      align-items: center;
+    }
+  }
+
+  .featured-cert__badge {
+    margin-bottom: var(--space-3);
+  }
+
+  .featured-cert__name {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-1);
+  }
+
+  .featured-cert__issuer {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--accent-info);
+    margin-bottom: var(--space-3);
+  }
+
+  .featured-cert__description {
+    color: var(--text-secondary);
+    max-width: 60ch;
+  }
+
+  .featured-cert__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  @media (min-width: 1024px) {
+    .featured-cert__meta {
+      padding-top: 0;
+      padding-left: var(--space-6);
+      border-top: none;
+      border-left: 1px solid var(--border-subtle);
+    }
+  }
+
+  .featured-cert__meta dl {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .featured-cert__meta dl > div {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .featured-cert__meta dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .featured-cert__meta dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+  }
+
+  .certifications__secondary {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-10);
+  }
+
+  @media (min-width: 768px) {
+    .certifications__secondary {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .cert-mini h4 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+  }
+
+  .cert-mini__issuer {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-1);
+  }
+
+  .cert-mini__date {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .certifications__badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 768px) {
+    .certifications__badges {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  .badge-tile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    transition:
+      border-color var(--dur-fast) var(--ease-standard),
+      transform var(--dur-fast) var(--ease-standard);
+  }
+
+  .badge-tile:hover,
+  .badge-tile:focus-visible {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+  }
+
+  .badge-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .badge-tile__external {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    color: var(--text-muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .badge-tile:hover,
+    .badge-tile:focus-visible {
+      transform: none;
+    }
+  }
+
+  .certifications__ctf-heading {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-5);
+  }
+
+  .ctf-grid {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .ctf-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .ctf-card h4 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+  }
+
+  .ctf-card__result {
+    color: var(--accent-success);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+  }
+
+  .ctf-card__detail {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .ctf-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent-info);
+    text-decoration: none;
+  }
+
+  .ctf-card__link:hover {
+    text-decoration: underline;
+  }
+</style>

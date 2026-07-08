@@ -1,0 +1,39 @@
+---
+import Hero from './Hero.astro';
+import About from './About.astro';
+import Skills from './Skills.astro';
+import Experience from './Experience.astro';
+import Projects from './Projects.astro';
+import Certifications from './Certifications.astro';
+import Education from './Education.astro';
+import BlogTeaser from './BlogTeaser.astro';
+import Contact from './Contact.astro';
+import { getTranslations, shared, type Locale } from '../utils/i18n';
+import { getUiStrings } from '../data/ui-strings';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const ui = getUiStrings(locale);
+const offensiveCategory = t.skills.categories.find((c: { id: string }) => c.id === 'offensive');
+---
+
+<Hero
+  hero={t.hero}
+  name={shared.name}
+  email={shared.email}
+  social={shared.social}
+  offensiveTools={offensiveCategory?.items ?? []}
+  ui={ui}
+/>
+<About about={t.about} ui={ui} />
+<Skills skills={t.skills} />
+<Experience experience={t.experience} ui={ui} />
+<Projects projects={t.projects} />
+<Certifications certifications={t.certifications} shared={shared} ui={ui} imagesAlt={t.imagesAlt} />
+<Education education={t.education} ui={ui} />
+<BlogTeaser blog={t.blog} locale={locale} />
+<Contact contact={t.contact} shared={shared} ui={ui} />

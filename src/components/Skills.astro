@@ -1,0 +1,117 @@
+---
+interface Category {
+  id: string;
+  title: string;
+  description: string;
+  items: string[];
+}
+
+interface Props {
+  skills: { heading: string; kicker: string; categories: Category[] };
+}
+
+const { skills } = Astro.props;
+
+const colorMap: Record<string, string> = {
+  offensive: 'red',
+  defensive: 'green',
+  'scripting-infra': 'cyan',
+  frameworks: 'amber',
+};
+---
+
+<section id="skills" class="section section-surface skills" aria-labelledby="skills-heading">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-kicker">{skills.kicker}</span>
+      <h2 class="section-title" id="skills-heading">{skills.heading}</h2>
+    </div>
+
+    <div class="skills__grid">
+      {
+        skills.categories.map((cat, i) => {
+          const color = colorMap[cat.id] ?? 'cyan';
+          return (
+            <article
+              class={`skill-card skill-card--${color}`}
+              data-reveal
+              style={`transition-delay:${Math.min(i, 3) * 60}ms`}
+            >
+              <h3 class="skill-card__title">{cat.title}</h3>
+              <p class="skill-card__description">{cat.description}</p>
+              <ul class="skill-card__tags">
+                {cat.items.map((item) => (
+                  <li class={`tag tag--${color}`}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills__grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 768px) {
+    .skills__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .skill-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-top-width: 3px;
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (min-width: 1024px) {
+    .skill-card {
+      padding: var(--space-6);
+    }
+  }
+
+  .skill-card--red {
+    border-top-color: var(--accent-primary);
+  }
+
+  .skill-card--green {
+    border-top-color: var(--accent-success);
+  }
+
+  .skill-card--cyan {
+    border-top-color: var(--accent-info);
+  }
+
+  .skill-card--amber {
+    border-top-color: var(--accent-warning);
+  }
+
+  .skill-card__title {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-3);
+  }
+
+  .skill-card__description {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+  }
+
+  .skill-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+</style>

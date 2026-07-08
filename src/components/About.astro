@@ -1,0 +1,98 @@
+---
+import type { UiStrings } from '../data/ui-strings';
+
+interface Props {
+  about: { heading: string; kicker: string; paragraphs: string[] };
+  ui: UiStrings;
+}
+
+const { about, ui } = Astro.props;
+---
+
+<section id="about" class="section about" aria-labelledby="about-heading">
+  <div class="container about__grid">
+    <div class="about__stats" data-reveal>
+      {
+        ui.aboutStats.map((stat) => (
+          <div class="about-stat">
+            <span class="about-stat__value">{stat.value}</span>
+            <span class="about-stat__label">{stat.label}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="about__copy">
+      <div class="section-head">
+        <span class="section-kicker">{about.kicker}</span>
+        <h2 class="section-title" id="about-heading">{about.heading}</h2>
+      </div>
+      {about.paragraphs.map((p) => <p class="about__paragraph prose-measure">{p}</p>)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about__grid {
+    display: grid;
+    gap: var(--space-10);
+  }
+
+  @media (min-width: 1024px) {
+    .about__grid {
+      grid-template-columns: 2fr 3fr;
+      gap: var(--space-12);
+    }
+  }
+
+  .about__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    align-content: start;
+  }
+
+  @media (min-width: 1024px) {
+    .about__stats {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .about-stat {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    .about-stat {
+      text-align: left;
+    }
+  }
+
+  .about-stat__value {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: var(--space-1);
+  }
+
+  .about-stat__label {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+  }
+
+  .about__paragraph {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .about__paragraph:last-child {
+    margin-bottom: 0;
+  }
+</style>

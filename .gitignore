@@ -1,0 +1,13 @@
+# Equipo de agentes de Claude Code (local, no se sube al repo)
+.claude/
+
+# Sistema
+.DS_Store
+
+# Dependencias / build (por si migramos a un stack con build, ej. Astro)
+node_modules/
+dist/
+.astro/
+
+# Borradores/plantillas privadas del blog (se trabajan localmente, no se publican)
+src/content/blog/_drafts/

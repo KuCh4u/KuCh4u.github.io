@@ -1,0 +1,534 @@
+{
+  "shared": {
+    "name": "Nicolás Cartagena",
+    "roleShort": "Cybersecurity Engineer · Red Team & Offensive Security",
+    "location": "Santiago, Chile",
+    "email": "nicolas.a.cartagena.m@gmail.com",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/nicolas-cartagena-cyber/",
+      "github": "https://github.com/kuch4u",
+      "credly": "https://www.credly.com/users/nicolas-cartagena.e0e85f76",
+      "hackthebox": "https://app.hackthebox.com/users/459904",
+      "tryhackme": "https://tryhackme.com/p/kuchau"
+    },
+    "assets": {
+      "logo": "/img/logo.jpg",
+      "badges": {
+        "aws-certified-cloud-practitioner": "/img/badges/aws-certified-cloud-practitioner.png",
+        "pentesting-web": "/img/badges/pentesting-web.png",
+        "introduccion-al-hacking-etico-y-pentesting": "/img/badges/introduccion-al-hacking-etico-y-pentesting.png",
+        "preparacion-de-campanas-de-red-team": "/img/badges/preparacion-de-campanas-de-red-team.png",
+        "tecnicas-de-evasion-de-sistemas-de-seguridad-y-creacion-de-malware": "/img/badges/tecnicas-de-evasion-de-sistemas-de-seguridad-y-creacion-de-malware.png",
+        "diplomado-en-red-team": "/img/badges/diplomado-en-red-team.png"
+      },
+      "certificates": {
+        "ejpt": "/certs/eJPT-Nicolas-Cartagena.pdf",
+        "ctfHackTheSystem": "/certs/Certificate-AMNESIXS.pdf"
+      }
+    }
+  },
+
+  "es": {
+    "seo": {
+      "title": "Nicolás Cartagena | Cybersecurity Engineer — Red Team & Offensive Security",
+      "metaDescription": "Portafolio de Nicolás Cartagena, Ingeniero en Ciberseguridad especializado en Red Team y seguridad ofensiva. Pentesting interno, respuesta a incidentes y SGSI ISO 27001 en entornos industriales. eJPT certificado.",
+      "ogTitle": "Nicolás Cartagena — Red Team & Offensive Security",
+      "ogDescription": "Ingeniero en Ciberseguridad con +3 años de experiencia: pentesting, respuesta a incidentes y hardening OT/ICS, respaldado por un SGSI ISO 27001 que redujo el riesgo crítico de 37% a 15%."
+    },
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre mí",
+      "skills": "Habilidades",
+      "experience": "Experiencia",
+      "projects": "Proyectos",
+      "certifications": "Certificaciones",
+      "education": "Educación",
+      "blog": "Blog",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "eyebrow": "Cybersecurity Engineer · Red Team & Offensive Security",
+      "headline": "Pentesting ofensivo. Impacto medible.",
+      "subtitle": "Más de 3 años asegurando entornos industriales críticos: pruebas de intrusión internas, respuesta a incidentes y hardening OT/ICS, con una reducción comprobada del riesgo crítico de 37% a 15% en 12 meses.",
+      "highlightBadge": "eJPT — Junior Penetration Tester (INE Security)",
+      "ctaPrimary": { "label": "Ver proyectos", "href": "#projects" },
+      "ctaSecondary": { "label": "Contactar", "href": "#contact" },
+      "location": "Santiago, Chile"
+    },
+    "about": {
+      "heading": "Sobre mí",
+      "kicker": "Perfil técnico-ofensivo con base en cumplimiento",
+      "paragraphs": [
+        "Soy Ingeniero en Ciberseguridad con más de 3 años de experiencia en un perfil híbrido: ofensivo en la práctica, con base sólida en cumplimiento normativo. Actualmente trabajo en WE TECHS liderando la implementación y recertificación end-to-end del Sistema de Gestión de Seguridad de la Información (SGSI) bajo ISO 27001:2022 en entornos industriales de minería y energía.",
+        "Mi trabajo combina pruebas de seguridad internas (Nmap, Burp Suite, sqlmap, Metasploit) sobre APIs y servicios críticos, respuesta a incidentes alineada a NIST 800-61 e ISO 27035, y diseño de controles de hardening (CIS Benchmarks) para entornos OT/ICS bajo IEC 62443. También automatizo el análisis de logs con Python, Bash y PowerShell, y opero monitoreo continuo con Wazuh.",
+        "Lidero con el enfoque ofensivo porque entender cómo se rompe un sistema es la única forma de defenderlo con criterio. El cumplimiento normativo no es el objetivo final: es la evidencia de que la seguridad que construyo se sostiene en el tiempo.",
+        "Base en Santiago, Chile."
+      ]
+    },
+    "skills": {
+      "heading": "Habilidades",
+      "kicker": "Cuatro frentes, un mismo objetivo: reducir riesgo real",
+      "categories": [
+        {
+          "id": "offensive",
+          "title": "Ofensiva",
+          "description": "Pruebas de intrusión internas sobre redes, APIs y aplicaciones web: reconocimiento, explotación, escalación de privilegios y detección de indicadores de compromiso.",
+          "items": ["Nmap", "Burp Suite", "Metasploit", "sqlmap", "Gobuster", "Hydra", "Explotación y escalación de privilegios", "Detección de IOCs/TTPs"]
+        },
+        {
+          "id": "defensive",
+          "title": "Defensiva / Blue Team",
+          "description": "Monitoreo continuo, detección y hardening de infraestructura crítica, con foco en reducir superficie de ataque y tiempo de detección.",
+          "items": ["Wazuh / SIEM", "Snort", "Hardening (CIS Benchmarks)", "Análisis y correlación de logs", "Logging centralizado"]
+        },
+        {
+          "id": "scripting-infra",
+          "title": "Scripting & Infraestructura",
+          "description": "Automatización de análisis de logs y tareas de seguridad; administración de infraestructura Linux/Windows, contenedores y cloud.",
+          "items": ["Python", "Bash", "PowerShell", "Linux", "Windows", "Docker", "AWS"]
+        },
+        {
+          "id": "frameworks",
+          "title": "Frameworks & Normativa",
+          "description": "Aplicación práctica de marcos de referencia y normativa internacional para gestión de riesgo, respuesta a incidentes y seguridad OT/ICS.",
+          "items": ["MITRE ATT&CK", "OWASP Top 10", "ISO 27001:2022", "ISO 27002", "ISO 27035", "IEC 62443", "NIST CSF", "NIST 800-61", "NIST 800-53", "GDPR"]
+        }
+      ]
+    },
+    "experience": {
+      "heading": "Experiencia",
+      "kicker": "Resultados en entornos industriales reales",
+      "items": [
+        {
+          "company": "WE TECHS",
+          "role": "Cybersecurity Engineer",
+          "period": "Nov 2022 — Presente",
+          "location": "Santiago, Chile · Híbrido",
+          "summary": "Seguridad ofensiva, respuesta a incidentes y liderazgo del SGSI ISO 27001:2022 en entornos industriales de minería y energía.",
+          "achievements": [
+            {
+              "text": "Lideró la implementación y recertificación end-to-end del SGSI bajo ISO 27001:2022.",
+              "highlight": false
+            },
+            {
+              "text": "Redujo los riesgos críticos de 37% a 15% (de 37 a 9 hallazgos) en 12 meses.",
+              "highlight": true
+            },
+            {
+              "text": "Ejecutó pruebas de seguridad internas (Nmap, Burp Suite, sqlmap, Metasploit) sobre APIs y servicios críticos.",
+              "highlight": false
+            },
+            {
+              "text": "Lideró la respuesta a un incidente con impacto en confidencialidad: contención, análisis técnico y post-mortem, aplicando NIST 800-61 e ISO 27035.",
+              "highlight": false
+            },
+            {
+              "text": "Diseñó controles ISO 27002 / IEC 62443 para entornos OT/ICS: hardening (CIS Benchmarks), logging centralizado, gestión de accesos y protección de endpoints.",
+              "highlight": false
+            },
+            {
+              "text": "Automatizó el análisis de logs mediante scripts en Python, Bash y PowerShell.",
+              "highlight": false
+            },
+            {
+              "text": "Diseñó y dictó capacitaciones de sensibilización en seguridad de la información.",
+              "highlight": false
+            }
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "heading": "Proyectos y casos",
+      "kicker": "Trabajo interno con impacto operativo",
+      "note": "Proyectos desarrollados en contexto profesional. Sin repositorios públicos por confidencialidad del cliente.",
+      "items": [
+        {
+          "id": "toolkit-sgsi",
+          "title": "Toolkit Interno SGSI ISO 27001",
+          "description": "Framework interno para estandarizar la gestión del Sistema de Gestión de Seguridad de la Información: políticas, procedimientos y matrices de riesgo reutilizables, construido para acelerar la implementación y recertificación de ISO 27001:2022 en entornos industriales.",
+          "tags": ["ISO 27001", "SGSI", "Gestión de riesgo", "Compliance"],
+          "status": "Proyecto interno",
+          "link": null
+        },
+        {
+          "id": "ir-playbooks",
+          "title": "Playbooks Operacionales de Respuesta a Incidentes",
+          "description": "Conjunto de playbooks de respuesta a incidentes para entornos OT, alineados a NIST 800-61 y MITRE ATT&CK, diseñados para estandarizar la contención, erradicación y recuperación ante incidentes de seguridad.",
+          "tags": ["NIST 800-61", "MITRE ATT&CK", "OT/ICS", "Incident Response"],
+          "status": "Proyecto interno",
+          "link": null
+        },
+        {
+          "id": "coming-soon",
+          "title": "Próximamente",
+          "description": "Nuevo proyecto de investigación en seguridad ofensiva actualmente en desarrollo.",
+          "tags": [],
+          "status": "Próximamente",
+          "link": null
+        }
+      ]
+    },
+    "certifications": {
+      "heading": "Certificaciones y logros",
+      "kicker": "Validación práctica, no solo teórica",
+      "featured": {
+        "name": "eJPT — Junior Penetration Tester",
+        "issuer": "INE Security",
+        "date": "27 de junio de 2026",
+        "credentialId": "186597779",
+        "description": "Certificación práctica que valida habilidades de pentesting de extremo a extremo: reconocimiento, explotación, post-explotación y reporting sobre redes y sistemas reales.",
+        "certificateAsset": "shared.assets.certificates.ejpt"
+      },
+      "list": [
+        {
+          "name": "AWS Certified Cloud Practitioner",
+          "issuer": "Amazon Web Services",
+          "date": "2023"
+        },
+        {
+          "name": "Diplomado en Red Team",
+          "issuer": "USACH",
+          "date": "2024–2025"
+        },
+        {
+          "name": "Interpretación y Análisis de Requisitos ISO 27001:2022",
+          "issuer": "Universidad de Chile",
+          "date": "Octubre 2024"
+        }
+      ],
+      "badges": [
+        { "id": "aws-certified-cloud-practitioner", "title": "AWS Certified Cloud Practitioner", "alt": "Insignia Credly: AWS Certified Cloud Practitioner" },
+        { "id": "pentesting-web", "title": "Pentesting Web", "alt": "Insignia Credly: Pentesting Web" },
+        { "id": "introduccion-al-hacking-etico-y-pentesting", "title": "Introducción al Hacking Ético y Pentesting", "alt": "Insignia Credly: Introducción al Hacking Ético y Pentesting" },
+        { "id": "preparacion-de-campanas-de-red-team", "title": "Preparación de Campañas de Red Team", "alt": "Insignia Credly: Preparación de Campañas de Red Team" },
+        { "id": "tecnicas-de-evasion-de-sistemas-de-seguridad-y-creacion-de-malware", "title": "Técnicas de Evasión de Sistemas de Seguridad y Creación de Malware", "alt": "Insignia Credly: Técnicas de Evasión de Sistemas de Seguridad y Creación de Malware" },
+        { "id": "diplomado-en-red-team", "title": "Diplomado en Red Team", "alt": "Insignia Credly: Diplomado en Red Team" }
+      ],
+      "ctf": {
+        "heading": "CTF y rankings",
+        "items": [
+          {
+            "name": "Hack The Box",
+            "result": "Top ~1.000 global",
+            "detail": null
+          },
+          {
+            "name": "TryHackMe",
+            "result": "Top 3% global",
+            "detail": null
+          },
+          {
+            "name": "CTF \"Hack The System\" (Hack The Box)",
+            "result": "Puesto 369 de 1.323 equipos (top 27%)",
+            "detail": "725 puntos · Equipo \"radiator springs\". Certificado disponible.",
+            "certificateAsset": "shared.assets.certificates.ctfHackTheSystem"
+          }
+        ]
+      }
+    },
+    "education": {
+      "heading": "Educación",
+      "items": [
+        {
+          "degree": "Diplomado en Red Team",
+          "institution": "USACH",
+          "period": "2024–2025",
+          "detail": null
+        },
+        {
+          "degree": "Ingeniería en Informática",
+          "institution": "INACAP",
+          "period": "2016–2022",
+          "detail": null
+        }
+      ]
+    },
+    "blog": {
+      "heading": "Blog",
+      "kicker": "Aprendiendo en voz alta",
+      "intro": "Notas, write-ups y cosas que voy aprendiendo en seguridad ofensiva y defensiva. Lo escribo para que le sirva a alguien más.",
+      "viewAll": "Ver todos los posts",
+      "readingTime": "min de lectura",
+      "emptyState": "Aún no hay posts publicados. Muy pronto.",
+      "tagsLabel": "Temas",
+      "backToBlog": "← Volver al blog",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "publishedOn": "Publicado el",
+      "readMore": "Leer más",
+      "availableIn": "También disponible en"
+    },
+    "contact": {
+      "heading": "Contacto",
+      "subtitle": "¿Buscas reforzar la seguridad ofensiva o el cumplimiento normativo de tu organización? Conversemos.",
+      "cta": "Escríbeme",
+      "note": "Solo se publican canales de contacto profesionales. No se comparte teléfono ni dirección.",
+      "channels": [
+        { "type": "email", "label": "Email", "value": "shared.email" },
+        { "type": "linkedin", "label": "LinkedIn", "value": "shared.social.linkedin" },
+        { "type": "github", "label": "GitHub", "value": "shared.social.github" },
+        { "type": "credly", "label": "Credly", "value": "shared.social.credly" },
+        { "type": "hackthebox", "label": "Hack The Box", "value": "shared.social.hackthebox" },
+        { "type": "tryhackme", "label": "TryHackMe", "value": "shared.social.tryhackme" }
+      ]
+    },
+    "imagesAlt": {
+      "logo": "Logo de Nicolás Cartagena, Cybersecurity Engineer",
+      "ejptCertificate": "Certificado eJPT — Junior Penetration Tester emitido por INE Security a nombre de Nicolás Cartagena",
+      "ctfCertificate": "Certificado del CTF \"Hack The System\" (Hack The Box), equipo radiator springs, puesto 369 de 1.323"
+    }
+  },
+
+  "en": {
+    "seo": {
+      "title": "Nicolás Cartagena | Cybersecurity Engineer — Red Team & Offensive Security",
+      "metaDescription": "Portfolio of Nicolás Cartagena, Cybersecurity Engineer specializing in Red Team and offensive security. Internal pentesting, incident response, and ISO 27001 ISMS leadership in industrial environments. eJPT certified.",
+      "ogTitle": "Nicolás Cartagena — Red Team & Offensive Security",
+      "ogDescription": "Cybersecurity Engineer with 3+ years of experience: pentesting, incident response, and OT/ICS hardening, backed by an ISO 27001 ISMS that cut critical risk from 37% to 15%."
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "skills": "Skills",
+      "experience": "Experience",
+      "projects": "Projects",
+      "certifications": "Certifications",
+      "education": "Education",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "hero": {
+      "eyebrow": "Cybersecurity Engineer · Red Team & Offensive Security",
+      "headline": "Offensive pentesting. Measurable impact.",
+      "subtitle": "3+ years securing critical industrial environments: internal penetration testing, incident response, and OT/ICS hardening, with a proven reduction of critical risk from 37% to 15% in 12 months.",
+      "highlightBadge": "eJPT — Junior Penetration Tester (INE Security)",
+      "ctaPrimary": { "label": "View projects", "href": "#projects" },
+      "ctaSecondary": { "label": "Get in touch", "href": "#contact" },
+      "location": "Santiago, Chile"
+    },
+    "about": {
+      "heading": "About me",
+      "kicker": "Offense-driven, compliance-grounded",
+      "paragraphs": [
+        "I'm a Cybersecurity Engineer with 3+ years of experience in a hybrid profile: offensive in practice, backed by a solid regulatory compliance foundation. I currently work at WE TECHS, leading the end-to-end implementation and recertification of an Information Security Management System (ISMS) under ISO 27001:2022 across industrial mining and energy environments.",
+        "My work spans internal security testing (Nmap, Burp Suite, sqlmap, Metasploit) against critical APIs and services, incident response aligned with NIST 800-61 and ISO 27035, and hardening controls (CIS Benchmarks) designed for OT/ICS environments under IEC 62443. I also automate log analysis with Python, Bash, and PowerShell, and run continuous monitoring with Wazuh.",
+        "I lead with offense because understanding how a system breaks is the only reliable way to defend it with judgment. Compliance isn't the end goal — it's the evidence that the security I build actually holds up over time.",
+        "Based in Santiago, Chile."
+      ]
+    },
+    "skills": {
+      "heading": "Skills",
+      "kicker": "Four fronts, one goal: reduce real risk",
+      "categories": [
+        {
+          "id": "offensive",
+          "title": "Offensive Security",
+          "description": "Internal penetration testing across networks, APIs, and web applications: reconnaissance, exploitation, privilege escalation, and IOC/TTP detection.",
+          "items": ["Nmap", "Burp Suite", "Metasploit", "sqlmap", "Gobuster", "Hydra", "Exploitation & privilege escalation", "IOC/TTP detection"]
+        },
+        {
+          "id": "defensive",
+          "title": "Defensive / Blue Team",
+          "description": "Continuous monitoring, detection, and hardening of critical infrastructure, focused on reducing attack surface and detection time.",
+          "items": ["Wazuh / SIEM", "Snort", "Hardening (CIS Benchmarks)", "Log analysis & correlation", "Centralized logging"]
+        },
+        {
+          "id": "scripting-infra",
+          "title": "Scripting & Infrastructure",
+          "description": "Automation of log analysis and security operations; managing Linux/Windows infrastructure, containers, and cloud.",
+          "items": ["Python", "Bash", "PowerShell", "Linux", "Windows", "Docker", "AWS"]
+        },
+        {
+          "id": "frameworks",
+          "title": "Frameworks & Standards",
+          "description": "Practical application of international frameworks and standards for risk management, incident response, and OT/ICS security.",
+          "items": ["MITRE ATT&CK", "OWASP Top 10", "ISO 27001:2022", "ISO 27002", "ISO 27035", "IEC 62443", "NIST CSF", "NIST 800-61", "NIST 800-53", "GDPR"]
+        }
+      ]
+    },
+    "experience": {
+      "heading": "Experience",
+      "kicker": "Results in real industrial environments",
+      "items": [
+        {
+          "company": "WE TECHS",
+          "role": "Cybersecurity Engineer",
+          "period": "Nov 2022 — Present",
+          "location": "Santiago, Chile · Hybrid",
+          "summary": "Offensive security, incident response, and ISO 27001:2022 ISMS leadership in industrial mining and energy environments.",
+          "achievements": [
+            {
+              "text": "Led the end-to-end implementation and recertification of the ISMS under ISO 27001:2022.",
+              "highlight": false
+            },
+            {
+              "text": "Reduced critical risk findings from 37% to 15% (from 37 to 9 findings) in 12 months.",
+              "highlight": true
+            },
+            {
+              "text": "Performed internal security testing (Nmap, Burp Suite, sqlmap, Metasploit) on critical APIs and services.",
+              "highlight": false
+            },
+            {
+              "text": "Led incident response for a confidentiality-impacting incident: containment, technical analysis, and post-mortem, applying NIST 800-61 and ISO 27035.",
+              "highlight": false
+            },
+            {
+              "text": "Designed ISO 27002 / IEC 62443 controls for OT/ICS environments: hardening (CIS Benchmarks), centralized logging, access management, and endpoint protection.",
+              "highlight": false
+            },
+            {
+              "text": "Automated log analysis using Python, Bash, and PowerShell scripts.",
+              "highlight": false
+            },
+            {
+              "text": "Designed and delivered information security awareness training.",
+              "highlight": false
+            }
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "heading": "Projects & case studies",
+      "kicker": "Internal work with operational impact",
+      "note": "Projects developed in a professional context. No public repositories due to client confidentiality.",
+      "items": [
+        {
+          "id": "toolkit-sgsi",
+          "title": "Internal ISO 27001 ISMS Toolkit",
+          "description": "Internal framework to standardize Information Security Management System operations: reusable policies, procedures, and risk matrices, built to accelerate ISO 27001:2022 implementation and recertification in industrial environments.",
+          "tags": ["ISO 27001", "ISMS", "Risk management", "Compliance"],
+          "status": "Internal project",
+          "link": null
+        },
+        {
+          "id": "ir-playbooks",
+          "title": "Operational Incident Response Playbooks",
+          "description": "A set of incident response playbooks for OT environments, aligned with NIST 800-61 and MITRE ATT&CK, built to standardize containment, eradication, and recovery for security incidents.",
+          "tags": ["NIST 800-61", "MITRE ATT&CK", "OT/ICS", "Incident Response"],
+          "status": "Internal project",
+          "link": null
+        },
+        {
+          "id": "coming-soon",
+          "title": "Coming soon",
+          "description": "New offensive security research project currently in progress.",
+          "tags": [],
+          "status": "Coming soon",
+          "link": null
+        }
+      ]
+    },
+    "certifications": {
+      "heading": "Certifications & achievements",
+      "kicker": "Hands-on validation, not just theory",
+      "featured": {
+        "name": "eJPT — Junior Penetration Tester",
+        "issuer": "INE Security",
+        "date": "June 27, 2026",
+        "credentialId": "186597779",
+        "description": "Hands-on certification validating end-to-end penetration testing skills: reconnaissance, exploitation, post-exploitation, and reporting across real networks and systems.",
+        "certificateAsset": "shared.assets.certificates.ejpt"
+      },
+      "list": [
+        {
+          "name": "AWS Certified Cloud Practitioner",
+          "issuer": "Amazon Web Services",
+          "date": "2023"
+        },
+        {
+          "name": "Red Team Diploma",
+          "issuer": "USACH",
+          "date": "2024–2025"
+        },
+        {
+          "name": "ISO 27001:2022 Requirements Interpretation and Analysis",
+          "issuer": "Universidad de Chile",
+          "date": "October 2024"
+        }
+      ],
+      "badges": [
+        { "id": "aws-certified-cloud-practitioner", "title": "AWS Certified Cloud Practitioner", "alt": "Credly badge: AWS Certified Cloud Practitioner" },
+        { "id": "pentesting-web", "title": "Web Pentesting", "alt": "Credly badge: Web Pentesting" },
+        { "id": "introduccion-al-hacking-etico-y-pentesting", "title": "Introduction to Ethical Hacking and Pentesting", "alt": "Credly badge: Introduction to Ethical Hacking and Pentesting" },
+        { "id": "preparacion-de-campanas-de-red-team", "title": "Red Team Campaign Preparation", "alt": "Credly badge: Red Team Campaign Preparation" },
+        { "id": "tecnicas-de-evasion-de-sistemas-de-seguridad-y-creacion-de-malware", "title": "Security Evasion Techniques and Malware Development", "alt": "Credly badge: Security Evasion Techniques and Malware Development" },
+        { "id": "diplomado-en-red-team", "title": "Red Team Diploma", "alt": "Credly badge: Red Team Diploma" }
+      ],
+      "ctf": {
+        "heading": "CTF & rankings",
+        "items": [
+          {
+            "name": "Hack The Box",
+            "result": "Top ~1,000 global",
+            "detail": null
+          },
+          {
+            "name": "TryHackMe",
+            "result": "Top 3% global",
+            "detail": null
+          },
+          {
+            "name": "\"Hack The System\" CTF (Hack The Box)",
+            "result": "Ranked 369 of 1,323 teams (top 27%)",
+            "detail": "725 points · Team \"radiator springs\". Certificate available.",
+            "certificateAsset": "shared.assets.certificates.ctfHackTheSystem"
+          }
+        ]
+      }
+    },
+    "education": {
+      "heading": "Education",
+      "items": [
+        {
+          "degree": "Red Team Diploma",
+          "institution": "USACH",
+          "period": "2024–2025",
+          "detail": null
+        },
+        {
+          "degree": "Bachelor's Degree in Computer Engineering",
+          "institution": "INACAP",
+          "period": "2016–2022",
+          "detail": null
+        }
+      ]
+    },
+    "blog": {
+      "heading": "Blog",
+      "kicker": "Learning out loud",
+      "intro": "Notes, write-ups, and things I'm learning in offensive and defensive security. I write them to be useful to someone else.",
+      "viewAll": "View all posts",
+      "readingTime": "min read",
+      "emptyState": "No posts published yet. Coming soon.",
+      "tagsLabel": "Topics",
+      "backToBlog": "← Back to blog",
+      "prev": "Previous",
+      "next": "Next",
+      "publishedOn": "Published on",
+      "readMore": "Read more",
+      "availableIn": "Also available in"
+    },
+    "contact": {
+      "heading": "Contact",
+      "subtitle": "Looking to strengthen your organization's offensive security or compliance posture? Let's talk.",
+      "cta": "Get in touch",
+      "note": "Only professional contact channels are published. No phone number or address is shared.",
+      "channels": [
+        { "type": "email", "label": "Email", "value": "shared.email" },
+        { "type": "linkedin", "label": "LinkedIn", "value": "shared.social.linkedin" },
+        { "type": "github", "label": "GitHub", "value": "shared.social.github" },
+        { "type": "credly", "label": "Credly", "value": "shared.social.credly" },
+        { "type": "hackthebox", "label": "Hack The Box", "value": "shared.social.hackthebox" },
+        { "type": "tryhackme", "label": "TryHackMe", "value": "shared.social.tryhackme" }
+      ]
+    },
+    "imagesAlt": {
+      "logo": "Nicolás Cartagena logo, Cybersecurity Engineer",
+      "ejptCertificate": "eJPT — Junior Penetration Tester certificate issued by INE Security to Nicolás Cartagena",
+      "ctfCertificate": "\"Hack The System\" CTF (Hack The Box) certificate, team radiator springs, ranked 369 of 1,323"
+    }
+  }
+}
