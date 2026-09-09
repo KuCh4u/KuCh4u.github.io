@@ -1,4 +1,8 @@
 ---
+import Icon from './Icon.astro';
+import { getUiStrings } from '../data/ui-strings';
+import type { Locale } from '../utils/i18n';
+
 interface ProjectItem {
   id: string;
   title: string;
@@ -10,9 +14,12 @@ interface ProjectItem {
 
 interface Props {
   projects: { heading: string; kicker: string; note: string; items: ProjectItem[] };
+  locale: Locale;
 }
 
-const { projects } = Astro.props;
+const { projects, locale } = Astro.props;
+const ui = getUiStrings(locale);
+const repoLabel = locale === 'es' ? 'Ver código' : 'View source';
 ---
 
 <section id="projects" class="section projects" aria-labelledby="projects-heading">
@@ -46,6 +53,18 @@ const { projects } = Astro.props;
                     <li class="tag">{tag}</li>
                   ))}
                 </ul>
+              )}
+              {item.link && (
+                <a
+                  class="project-card__link"
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${repoLabel}: ${item.title} (${ui.opensNewTab})`}
+                >
+                  {repoLabel}
+                  <Icon name="external" size={14} />
+                </a>
               )}
             </article>
           );
@@ -108,5 +127,24 @@ const { projects } = Astro.props;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
+  }
+
+  .project-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--accent-info);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+
+  .project-card__link:hover,
+  .project-card__link:focus-visible {
+    border-bottom-color: currentColor;
   }
 </style>

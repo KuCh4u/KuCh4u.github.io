@@ -15,12 +15,12 @@ interface Props {
   name: string;
   email: string;
   social: { linkedin: string; github: string };
-  offensiveTools: string[];
+  stackTools: string[];
   ui: UiStrings;
 }
 
-const { hero, name, email, social, offensiveTools, ui } = Astro.props;
-const toolsLine = offensiveTools.slice(0, 6).join(', ');
+const { hero, name, email, social, stackTools, ui } = Astro.props;
+const toolsLine = stackTools.slice(0, 6).join(', ');
 ---
 
 <section id="home" class="hero" aria-label={name}>

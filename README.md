@@ -1,8 +1,8 @@
-# Portafolio de Ciberseguridad — Nicolás Cartagena
+# Portafolio Full Stack — Nicolás Cartagena
 
 Portafolio personal, construido con **[Astro](https://astro.build)**, bilingüe
 (ES/EN), dark-first, siguiendo un sistema de diseño propio tipo "terminal
-profesional" (identidad hacker/infosec aplicada con moderación editorial).
+profesional" (estética de terminal aplicada con moderación editorial).
 
 **Sitio en vivo:** https://kuch4u.github.io
 

@@ -1,7 +1,7 @@
 {
   "shared": {
     "name": "Nicolás Cartagena",
-    "roleShort": "Cybersecurity Engineer · Red Team & Offensive Security",
+    "roleShort": "Full Stack Engineer · Web & Mobile",
     "location": "Santiago, Chile",
     "email": "nicolas.a.cartagena.m@gmail.com",
     "social": {
@@ -30,15 +30,15 @@
 
   "es": {
     "seo": {
-      "title": "Nicolás Cartagena | Cybersecurity Engineer — Red Team & Offensive Security",
-      "metaDescription": "Portafolio de Nicolás Cartagena, Ingeniero en Ciberseguridad especializado en Red Team y seguridad ofensiva. Pentesting interno, respuesta a incidentes y SGSI ISO 27001 en entornos industriales. eJPT certificado.",
-      "ogTitle": "Nicolás Cartagena — Red Team & Offensive Security",
-      "ogDescription": "Ingeniero en Ciberseguridad con +3 años de experiencia: pentesting, respuesta a incidentes y hardening OT/ICS, respaldado por un SGSI ISO 27001 que redujo el riesgo crítico de 37% a 15%."
+      "title": "Nicolás Cartagena | Full Stack Engineer — Vue, React, Node.js y Python",
+      "metaDescription": "Portafolio de Nicolás Cartagena, Ingeniero en Informática y Full Stack Engineer con 3+ años construyendo aplicaciones web y móviles: TypeScript, JavaScript, Python, Vue, React, Next.js, React Native, NestJS, Node.js, Django y PostgreSQL, con CI/CD sobre AWS.",
+      "ogTitle": "Nicolás Cartagena — Full Stack Engineer",
+      "ogDescription": "3+ años desarrollando web y móvil de punta a punta: TypeScript, Python, Vue, React, Next.js, NestJS y Django sobre PostgreSQL, con pipelines CI/CD en AWS y criterio de seguridad desde el diseño."
     },
     "nav": {
       "home": "Inicio",
       "about": "Sobre mí",
-      "skills": "Habilidades",
+      "skills": "Stack",
       "experience": "Experiencia",
       "projects": "Proyectos",
       "certifications": "Certificaciones",
@@ -47,91 +47,104 @@
       "contact": "Contacto"
     },
     "hero": {
-      "eyebrow": "Cybersecurity Engineer · Red Team & Offensive Security",
-      "headline": "Pentesting ofensivo. Impacto medible.",
-      "subtitle": "Más de 3 años asegurando entornos industriales críticos: pruebas de intrusión internas, respuesta a incidentes y hardening OT/ICS, con una reducción comprobada del riesgo crítico de 37% a 15% en 12 meses.",
-      "highlightBadge": "eJPT — Junior Penetration Tester (INE Security)",
+      "eyebrow": "Full Stack Engineer · Web & Mobile",
+      "headline": "Del requerimiento al deploy, sin pasar la pelota.",
+      "subtitle": "Ingeniero en Informática con más de 3 años construyendo aplicaciones web y móviles de punta a punta: Vue, React, Next.js y React Native en el frontend; NestJS, Node.js, Python y Django sobre PostgreSQL en el backend, con pipelines CI/CD en AWS.",
+      "highlightBadge": "AWS Certified Cloud Practitioner · eJPT (INE Security)",
       "ctaPrimary": { "label": "Ver proyectos", "href": "#projects" },
       "ctaSecondary": { "label": "Contactar", "href": "#contact" },
       "location": "Santiago, Chile"
     },
     "about": {
       "heading": "Sobre mí",
-      "kicker": "Perfil técnico-ofensivo con base en cumplimiento",
+      "kicker": "Full stack de verdad: frontend, backend y despliegue",
       "paragraphs": [
-        "Soy Ingeniero en Ciberseguridad con más de 3 años de experiencia en un perfil híbrido: ofensivo en la práctica, con base sólida en cumplimiento normativo. Actualmente trabajo en WE TECHS liderando la implementación y recertificación end-to-end del Sistema de Gestión de Seguridad de la Información (SGSI) bajo ISO 27001:2022 en entornos industriales de minería y energía.",
-        "Mi trabajo combina pruebas de seguridad internas (Nmap, Burp Suite, sqlmap, Metasploit) sobre APIs y servicios críticos, respuesta a incidentes alineada a NIST 800-61 e ISO 27035, y diseño de controles de hardening (CIS Benchmarks) para entornos OT/ICS bajo IEC 62443. También automatizo el análisis de logs con Python, Bash y PowerShell, y opero monitoreo continuo con Wazuh.",
-        "Lidero con el enfoque ofensivo porque entender cómo se rompe un sistema es la única forma de defenderlo con criterio. El cumplimiento normativo no es el objetivo final: es la evidencia de que la seguridad que construyo se sostiene en el tiempo.",
+        "Soy Ingeniero en Informática con más de 3 años de experiencia en desarrollo full stack. Escribo TypeScript y JavaScript a diario, HTML semántico y CSS moderno sin librerías de por medio cuando conviene, y Python cuando el problema lo pide. Construyo aplicaciones web y móviles con Vue, React, Next.js y React Native en el frontend, y NestJS, Node.js y Django sobre PostgreSQL en el backend.",
+        "Me muevo con soltura en toda la ruta del producto: levantamiento de requerimientos, diseño de la API, modelado y optimización de consultas, implementación, pruebas y despliegue. He optimizado consultas y tratamiento de datos en backend hasta reducir los tiempos de respuesta a menos de la mitad, y diseñado pipelines de CI/CD que eliminaron los pasos manuales entre desarrollo, QA y producción.",
+        "En infraestructura trabajo sobre AWS (EC2, S3, Lambda, CloudFront) y Docker, y coordino con equipos multidisciplinarios —producto, QA, infraestructura, IoT— traduciendo requerimientos entre lo técnico y lo de negocio. Mi formación paralela en seguridad ofensiva (eJPT, Diplomado en Red Team) no es un desvío: es lo que me permite escribir software con criterio de seguridad desde el diseño, no como parche al final.",
         "Base en Santiago, Chile."
       ]
     },
     "skills": {
-      "heading": "Habilidades",
-      "kicker": "Cuatro frentes, un mismo objetivo: reducir riesgo real",
+      "heading": "Stack",
+      "kicker": "Lo que uso para llevar un producto a producción",
       "categories": [
         {
-          "id": "offensive",
-          "title": "Ofensiva",
-          "description": "Pruebas de intrusión internas sobre redes, APIs y aplicaciones web: reconocimiento, explotación, escalación de privilegios y detección de indicadores de compromiso.",
-          "items": ["Nmap", "Burp Suite", "Metasploit", "sqlmap", "Gobuster", "Hydra", "Explotación y escalación de privilegios", "Detección de IOCs/TTPs"]
+          "id": "languages",
+          "title": "Lenguajes",
+          "description": "Las bases sobre las que construyo todo lo demás: tipado estático donde suma, y el lenguaje correcto para cada capa del problema.",
+          "items": ["TypeScript", "JavaScript (ES2023+)", "Python", "HTML5", "CSS3", "SQL", "Bash"]
         },
         {
-          "id": "defensive",
-          "title": "Defensiva / Blue Team",
-          "description": "Monitoreo continuo, detección y hardening de infraestructura crítica, con foco en reducir superficie de ataque y tiempo de detección.",
-          "items": ["Wazuh / SIEM", "Snort", "Hardening (CIS Benchmarks)", "Análisis y correlación de logs", "Logging centralizado"]
+          "id": "frontend",
+          "title": "Frontend",
+          "description": "Interfaces web y móviles centradas en la usabilidad del cliente final, con foco en rendimiento, accesibilidad y HTML semántico.",
+          "items": ["Vue", "React", "Next.js", "React Native", "Astro", "CSS moderno (Grid, Flexbox)", "Diseño responsive", "Accesibilidad (WCAG)"]
         },
         {
-          "id": "scripting-infra",
-          "title": "Scripting & Infraestructura",
-          "description": "Automatización de análisis de logs y tareas de seguridad; administración de infraestructura Linux/Windows, contenedores y cloud.",
-          "items": ["Python", "Bash", "PowerShell", "Linux", "Windows", "Docker", "AWS"]
+          "id": "backend",
+          "title": "Backend & datos",
+          "description": "APIs REST y servicios mantenibles, con modelado de datos y optimización de consultas como parte del trabajo, no como una fase aparte.",
+          "items": ["NestJS", "Node.js", "Django", "APIs REST", "PostgreSQL", "Modelado de datos", "Optimización de consultas", "Autenticación y autorización"]
         },
         {
-          "id": "frameworks",
-          "title": "Frameworks & Normativa",
-          "description": "Aplicación práctica de marcos de referencia y normativa internacional para gestión de riesgo, respuesta a incidentes y seguridad OT/ICS.",
-          "items": ["MITRE ATT&CK", "OWASP Top 10", "ISO 27001:2022", "ISO 27002", "ISO 27035", "IEC 62443", "NIST CSF", "NIST 800-61", "NIST 800-53", "GDPR"]
+          "id": "cloud-devops",
+          "title": "Cloud & DevOps",
+          "description": "Despliegue y operación de las aplicaciones que construyo: automatización de entregas y servicios gestionados en AWS.",
+          "items": ["AWS (EC2, S3, Lambda, CloudFront)", "CI/CD", "Docker", "GitHub Actions", "Linux", "Despliegue multi-ambiente"]
+        },
+        {
+          "id": "security",
+          "title": "Desarrollo seguro",
+          "description": "Criterio de seguridad aplicado al código y al pipeline, respaldado por formación ofensiva práctica.",
+          "items": ["OWASP Top 10", "Hardening de pipelines CI/CD", "Gestión de vulnerabilidades", "Manejo seguro de secretos", "Burp Suite", "Threat modeling básico"]
+        },
+        {
+          "id": "practices",
+          "title": "Prácticas & equipo",
+          "description": "Cómo trabajo con otros: control de versiones, revisión de código y coordinación con producto, QA e infraestructura.",
+          "items": ["Git / GitHub", "Code review", "Metodologías ágiles", "Documentación técnica", "Coordinación multidisciplinaria", "Levantamiento de requerimientos"]
         }
       ]
     },
     "experience": {
       "heading": "Experiencia",
-      "kicker": "Resultados en entornos industriales reales",
+      "kicker": "Producto en producción, no prototipos",
       "items": [
         {
-          "company": "WE TECHS",
-          "role": "Cybersecurity Engineer",
-          "period": "Nov 2022 — Presente",
+          "company": "We-Techs",
+          "role": "Full Stack Engineer",
+          "period": "Nov 2022 — Ago 2026",
           "location": "Santiago, Chile · Híbrido",
-          "summary": "Seguridad ofensiva, respuesta a incidentes y liderazgo del SGSI ISO 27001:2022 en entornos industriales de minería y energía.",
+          "summary": "Desarrollo end-to-end de aplicaciones web y móviles: frontend con Vue, React y React Native, backend con NestJS, Node.js y Django sobre PostgreSQL, y despliegue automatizado en AWS.",
           "achievements": [
             {
-              "text": "Lideró la implementación y recertificación end-to-end del SGSI bajo ISO 27001:2022.",
+              "text": "Optimicé el rendimiento de las aplicaciones mejorando las consultas a base de datos y el tratamiento de datos en el backend, reduciendo los tiempos de respuesta en más de un 50%.",
+              "highlight": true,
+              "stat": { "before": 100, "after": 50, "suffix": "%" }
+            },
+            {
+              "text": "Implementé pipelines de CI/CD para automatizar el despliegue de código entre ambientes (desarrollo, QA, producción), eliminando pasos manuales y errores de traspaso.",
               "highlight": false
             },
             {
-              "text": "Redujo los riesgos críticos de 37% a 15% (de 37 a 9 hallazgos) en 12 meses.",
-              "highlight": true
-            },
-            {
-              "text": "Ejecutó pruebas de seguridad internas (Nmap, Burp Suite, sqlmap, Metasploit) sobre APIs y servicios críticos.",
+              "text": "Desarrollé nuevas aplicaciones con foco en la usabilidad del cliente final, participando desde el levantamiento de requerimientos hasta el despliegue.",
               "highlight": false
             },
             {
-              "text": "Lideró la respuesta a un incidente con impacto en confidencialidad: contención, análisis técnico y post-mortem, aplicando NIST 800-61 e ISO 27035.",
+              "text": "Construí interfaces web y móviles con Vue, React, Next.js y React Native, y servicios backend con NestJS, Node.js y Django sobre PostgreSQL.",
               "highlight": false
             },
             {
-              "text": "Diseñó controles ISO 27002 / IEC 62443 para entornos OT/ICS: hardening (CIS Benchmarks), logging centralizado, gestión de accesos y protección de endpoints.",
+              "text": "Desplegué y mantuve aplicaciones sobre AWS: instancias EC2, almacenamiento en S3 y funciones Lambda para procesos desacoplados, además de distribución de contenido vía CloudFront con políticas de caché y control de acceso.",
               "highlight": false
             },
             {
-              "text": "Automatizó el análisis de logs mediante scripts en Python, Bash y PowerShell.",
+              "text": "Incorporé medidas de seguridad tanto en el pipeline como en las aplicaciones, aplicando criterios de desarrollo seguro.",
               "highlight": false
             },
             {
-              "text": "Diseñó y dictó capacitaciones de sensibilización en seguridad de la información.",
+              "text": "Coordiné con equipos multidisciplinarios (producto, QA, infraestructura, IoT) para alinear entregas y prioridades, traduciendo requerimientos entre áreas técnicas y de negocio.",
               "highlight": false
             }
           ]
@@ -140,44 +153,52 @@
     },
     "projects": {
       "heading": "Proyectos y casos",
-      "kicker": "Trabajo interno con impacto operativo",
-      "note": "Proyectos desarrollados en contexto profesional. Sin repositorios públicos por confidencialidad del cliente.",
+      "kicker": "Trabajo real, con impacto medible",
+      "note": "Casos desarrollados en contexto profesional: sin repositorios públicos por confidencialidad del cliente, salvo donde se indique.",
       "items": [
         {
-          "id": "toolkit-sgsi",
-          "title": "Toolkit Interno SGSI ISO 27001",
-          "description": "Framework interno para estandarizar la gestión del Sistema de Gestión de Seguridad de la Información: políticas, procedimientos y matrices de riesgo reutilizables, construido para acelerar la implementación y recertificación de ISO 27001:2022 en entornos industriales.",
-          "tags": ["ISO 27001", "SGSI", "Gestión de riesgo", "Compliance"],
-          "status": "Proyecto interno",
+          "id": "perf-backend",
+          "title": "Optimización de rendimiento en producción",
+          "description": "Diagnóstico y reescritura de las consultas más costosas del sistema junto con el tratamiento de datos en el backend: índices, reducción de consultas N+1 y paginación real en las respuestas de la API. El resultado fue una caída de más del 50% en los tiempos de respuesta, sin cambiar el contrato público de la API.",
+          "tags": ["PostgreSQL", "Node.js", "NestJS", "Rendimiento", "APIs REST"],
+          "status": "Caso profesional",
           "link": null
         },
         {
-          "id": "ir-playbooks",
-          "title": "Playbooks Operacionales de Respuesta a Incidentes",
-          "description": "Conjunto de playbooks de respuesta a incidentes para entornos OT, alineados a NIST 800-61 y MITRE ATT&CK, diseñados para estandarizar la contención, erradicación y recuperación ante incidentes de seguridad.",
-          "tags": ["NIST 800-61", "MITRE ATT&CK", "OT/ICS", "Incident Response"],
-          "status": "Proyecto interno",
+          "id": "cicd-pipelines",
+          "title": "Pipelines CI/CD multi-ambiente",
+          "description": "Diseño e implementación de pipelines que automatizan el despliegue de código entre desarrollo, QA y producción, con etapas de build, pruebas y publicación, manejo seguro de secretos y hardening del propio pipeline. Eliminaron los pasos manuales y los errores de traspaso entre ambientes.",
+          "tags": ["CI/CD", "Docker", "AWS", "GitHub Actions", "Desarrollo seguro"],
+          "status": "Caso profesional",
           "link": null
         },
         {
-          "id": "coming-soon",
-          "title": "Próximamente",
-          "description": "Nuevo proyecto de investigación en seguridad ofensiva actualmente en desarrollo.",
-          "tags": [],
-          "status": "Próximamente",
+          "id": "apps-web-movil",
+          "title": "Aplicaciones web y móviles a medida",
+          "description": "Desarrollo end-to-end de aplicaciones para clientes: levantamiento de requerimientos, diseño de la API, interfaz en Vue, React o Next.js, app móvil en React Native y despliegue sobre AWS. Foco permanente en la usabilidad del cliente final y en entregas coordinadas con producto, QA e infraestructura.",
+          "tags": ["Vue", "React", "Next.js", "React Native", "TypeScript", "AWS"],
+          "status": "Caso profesional",
           "link": null
+        },
+        {
+          "id": "portfolio",
+          "title": "Este portafolio",
+          "description": "Sitio estático bilingüe construido con Astro y TypeScript, sin framework de UI en el cliente: sistema de tokens en CSS puro, modo claro/oscuro, i18n con rutas nativas, blog con Content Collections y despliegue automático a GitHub Pages vía GitHub Actions. El código es público.",
+          "tags": ["Astro", "TypeScript", "CSS", "i18n", "GitHub Actions"],
+          "status": "Código abierto",
+          "link": "https://github.com/kuch4u/KuCh4u.github.io"
         }
       ]
     },
     "certifications": {
       "heading": "Certificaciones y logros",
-      "kicker": "Validación práctica, no solo teórica",
+      "kicker": "Cloud, seguridad y práctica constante",
       "featured": {
         "name": "eJPT — Junior Penetration Tester",
         "issuer": "INE Security",
         "date": "27 de junio de 2026",
         "credentialId": "186597779",
-        "description": "Certificación práctica que valida habilidades de pentesting de extremo a extremo: reconocimiento, explotación, post-explotación y reporting sobre redes y sistemas reales.",
+        "description": "Certificación práctica de seguridad ofensiva. La mantengo porque cambia cómo escribo código: conocer cómo se rompe una aplicación es lo que permite construirla con criterio de seguridad desde el diseño.",
         "certificateAsset": "shared.assets.certificates.ejpt"
       },
       "list": [
@@ -231,15 +252,15 @@
       "heading": "Educación",
       "items": [
         {
-          "degree": "Diplomado en Red Team",
-          "institution": "USACH",
-          "period": "2024–2025",
-          "detail": null
-        },
-        {
           "degree": "Ingeniería en Informática",
           "institution": "INACAP",
           "period": "2016–2022",
+          "detail": null
+        },
+        {
+          "degree": "Diplomado en Red Team",
+          "institution": "Capacitaciones USACH",
+          "period": "2024–2025",
           "detail": null
         }
       ]
@@ -247,7 +268,7 @@
     "blog": {
       "heading": "Blog",
       "kicker": "Aprendiendo en voz alta",
-      "intro": "Notas, write-ups y cosas que voy aprendiendo en seguridad ofensiva y defensiva. Lo escribo para que le sirva a alguien más.",
+      "intro": "Notas sobre desarrollo full stack: rendimiento, arquitectura, CI/CD y seguridad aplicada al código. Lo escribo para que le sirva a alguien más.",
       "viewAll": "Ver todos los posts",
       "readingTime": "min de lectura",
       "emptyState": "Aún no hay posts publicados. Muy pronto.",
@@ -261,7 +282,7 @@
     },
     "contact": {
       "heading": "Contacto",
-      "subtitle": "¿Buscas reforzar la seguridad ofensiva o el cumplimiento normativo de tu organización? Conversemos.",
+      "subtitle": "¿Necesitas a alguien que construya, optimice y despliegue tu producto web o móvil? Conversemos.",
       "cta": "Escríbeme",
       "note": "Solo se publican canales de contacto profesionales. No se comparte teléfono ni dirección.",
       "channels": [
@@ -274,7 +295,7 @@
       ]
     },
     "imagesAlt": {
-      "logo": "Logo de Nicolás Cartagena, Cybersecurity Engineer",
+      "logo": "Logo de Nicolás Cartagena, Full Stack Engineer",
       "ejptCertificate": "Certificado eJPT — Junior Penetration Tester emitido por INE Security a nombre de Nicolás Cartagena",
       "ctfCertificate": "Certificado del CTF \"Hack The System\" (Hack The Box), equipo radiator springs, puesto 369 de 1.323"
     }
@@ -282,15 +303,15 @@
 
   "en": {
     "seo": {
-      "title": "Nicolás Cartagena | Cybersecurity Engineer — Red Team & Offensive Security",
-      "metaDescription": "Portfolio of Nicolás Cartagena, Cybersecurity Engineer specializing in Red Team and offensive security. Internal pentesting, incident response, and ISO 27001 ISMS leadership in industrial environments. eJPT certified.",
-      "ogTitle": "Nicolás Cartagena — Red Team & Offensive Security",
-      "ogDescription": "Cybersecurity Engineer with 3+ years of experience: pentesting, incident response, and OT/ICS hardening, backed by an ISO 27001 ISMS that cut critical risk from 37% to 15%."
+      "title": "Nicolás Cartagena | Full Stack Engineer — Vue, React, Node.js & Python",
+      "metaDescription": "Portfolio of Nicolás Cartagena, Computer Engineer and Full Stack Engineer with 3+ years building web and mobile applications: TypeScript, JavaScript, Python, Vue, React, Next.js, React Native, NestJS, Node.js, Django and PostgreSQL, with CI/CD on AWS.",
+      "ogTitle": "Nicolás Cartagena — Full Stack Engineer",
+      "ogDescription": "3+ years building web and mobile products end to end: TypeScript, Python, Vue, React, Next.js, NestJS and Django on PostgreSQL, with CI/CD pipelines on AWS and security built in from the design stage."
     },
     "nav": {
       "home": "Home",
       "about": "About",
-      "skills": "Skills",
+      "skills": "Stack",
       "experience": "Experience",
       "projects": "Projects",
       "certifications": "Certifications",
@@ -299,91 +320,104 @@
       "contact": "Contact"
     },
     "hero": {
-      "eyebrow": "Cybersecurity Engineer · Red Team & Offensive Security",
-      "headline": "Offensive pentesting. Measurable impact.",
-      "subtitle": "3+ years securing critical industrial environments: internal penetration testing, incident response, and OT/ICS hardening, with a proven reduction of critical risk from 37% to 15% in 12 months.",
-      "highlightBadge": "eJPT — Junior Penetration Tester (INE Security)",
+      "eyebrow": "Full Stack Engineer · Web & Mobile",
+      "headline": "From requirement to deploy, end to end.",
+      "subtitle": "Computer Engineer with 3+ years building web and mobile applications end to end: Vue, React, Next.js and React Native on the frontend; NestJS, Node.js, Python and Django on PostgreSQL on the backend, with CI/CD pipelines on AWS.",
+      "highlightBadge": "AWS Certified Cloud Practitioner · eJPT (INE Security)",
       "ctaPrimary": { "label": "View projects", "href": "#projects" },
       "ctaSecondary": { "label": "Get in touch", "href": "#contact" },
       "location": "Santiago, Chile"
     },
     "about": {
       "heading": "About me",
-      "kicker": "Offense-driven, compliance-grounded",
+      "kicker": "Full stack for real: frontend, backend, and deployment",
       "paragraphs": [
-        "I'm a Cybersecurity Engineer with 3+ years of experience in a hybrid profile: offensive in practice, backed by a solid regulatory compliance foundation. I currently work at WE TECHS, leading the end-to-end implementation and recertification of an Information Security Management System (ISMS) under ISO 27001:2022 across industrial mining and energy environments.",
-        "My work spans internal security testing (Nmap, Burp Suite, sqlmap, Metasploit) against critical APIs and services, incident response aligned with NIST 800-61 and ISO 27035, and hardening controls (CIS Benchmarks) designed for OT/ICS environments under IEC 62443. I also automate log analysis with Python, Bash, and PowerShell, and run continuous monitoring with Wazuh.",
-        "I lead with offense because understanding how a system breaks is the only reliable way to defend it with judgment. Compliance isn't the end goal — it's the evidence that the security I build actually holds up over time.",
+        "I'm a Computer Engineer with 3+ years of full stack development experience. I write TypeScript and JavaScript every day, semantic HTML and modern CSS with no library in between when that's the right call, and Python when the problem asks for it. I build web and mobile applications with Vue, React, Next.js and React Native on the frontend, and NestJS, Node.js and Django on PostgreSQL on the backend.",
+        "I'm comfortable across the whole product path: requirements gathering, API design, data modeling and query optimization, implementation, testing, and deployment. I've optimized queries and backend data handling to cut response times by more than half, and designed CI/CD pipelines that removed the manual steps between development, QA, and production.",
+        "On the infrastructure side I work with AWS (EC2, S3, Lambda, CloudFront) and Docker, and I coordinate with multidisciplinary teams — product, QA, infrastructure, IoT — translating requirements between technical and business domains. My parallel training in offensive security (eJPT, Red Team Diploma) isn't a detour: it's what lets me write software with security in mind from the design stage, not patched in at the end.",
         "Based in Santiago, Chile."
       ]
     },
     "skills": {
-      "heading": "Skills",
-      "kicker": "Four fronts, one goal: reduce real risk",
+      "heading": "Stack",
+      "kicker": "What I use to take a product to production",
       "categories": [
         {
-          "id": "offensive",
-          "title": "Offensive Security",
-          "description": "Internal penetration testing across networks, APIs, and web applications: reconnaissance, exploitation, privilege escalation, and IOC/TTP detection.",
-          "items": ["Nmap", "Burp Suite", "Metasploit", "sqlmap", "Gobuster", "Hydra", "Exploitation & privilege escalation", "IOC/TTP detection"]
+          "id": "languages",
+          "title": "Languages",
+          "description": "The foundation everything else is built on: static typing where it pays off, and the right language for each layer of the problem.",
+          "items": ["TypeScript", "JavaScript (ES2023+)", "Python", "HTML5", "CSS3", "SQL", "Bash"]
         },
         {
-          "id": "defensive",
-          "title": "Defensive / Blue Team",
-          "description": "Continuous monitoring, detection, and hardening of critical infrastructure, focused on reducing attack surface and detection time.",
-          "items": ["Wazuh / SIEM", "Snort", "Hardening (CIS Benchmarks)", "Log analysis & correlation", "Centralized logging"]
+          "id": "frontend",
+          "title": "Frontend",
+          "description": "Web and mobile interfaces centered on end-user usability, with a focus on performance, accessibility, and semantic HTML.",
+          "items": ["Vue", "React", "Next.js", "React Native", "Astro", "Modern CSS (Grid, Flexbox)", "Responsive design", "Accessibility (WCAG)"]
         },
         {
-          "id": "scripting-infra",
-          "title": "Scripting & Infrastructure",
-          "description": "Automation of log analysis and security operations; managing Linux/Windows infrastructure, containers, and cloud.",
-          "items": ["Python", "Bash", "PowerShell", "Linux", "Windows", "Docker", "AWS"]
+          "id": "backend",
+          "title": "Backend & data",
+          "description": "Maintainable REST APIs and services, with data modeling and query optimization as part of the work rather than a separate phase.",
+          "items": ["NestJS", "Node.js", "Django", "REST APIs", "PostgreSQL", "Data modeling", "Query optimization", "Authentication & authorization"]
         },
         {
-          "id": "frameworks",
-          "title": "Frameworks & Standards",
-          "description": "Practical application of international frameworks and standards for risk management, incident response, and OT/ICS security.",
-          "items": ["MITRE ATT&CK", "OWASP Top 10", "ISO 27001:2022", "ISO 27002", "ISO 27035", "IEC 62443", "NIST CSF", "NIST 800-61", "NIST 800-53", "GDPR"]
+          "id": "cloud-devops",
+          "title": "Cloud & DevOps",
+          "description": "Deploying and running the applications I build: automated delivery and managed services on AWS.",
+          "items": ["AWS (EC2, S3, Lambda, CloudFront)", "CI/CD", "Docker", "GitHub Actions", "Linux", "Multi-environment deployment"]
+        },
+        {
+          "id": "security",
+          "title": "Secure development",
+          "description": "Security judgment applied to the code and to the pipeline, backed by hands-on offensive training.",
+          "items": ["OWASP Top 10", "CI/CD pipeline hardening", "Vulnerability management", "Secure secret handling", "Burp Suite", "Basic threat modeling"]
+        },
+        {
+          "id": "practices",
+          "title": "Practices & teamwork",
+          "description": "How I work with others: version control, code review, and coordination with product, QA, and infrastructure.",
+          "items": ["Git / GitHub", "Code review", "Agile methodologies", "Technical documentation", "Cross-team coordination", "Requirements gathering"]
         }
       ]
     },
     "experience": {
       "heading": "Experience",
-      "kicker": "Results in real industrial environments",
+      "kicker": "Products in production, not prototypes",
       "items": [
         {
-          "company": "WE TECHS",
-          "role": "Cybersecurity Engineer",
-          "period": "Nov 2022 — Present",
+          "company": "We-Techs",
+          "role": "Full Stack Engineer",
+          "period": "Nov 2022 — Aug 2026",
           "location": "Santiago, Chile · Hybrid",
-          "summary": "Offensive security, incident response, and ISO 27001:2022 ISMS leadership in industrial mining and energy environments.",
+          "summary": "End-to-end development of web and mobile applications: frontend with Vue, React and React Native, backend with NestJS, Node.js and Django on PostgreSQL, and automated deployment on AWS.",
           "achievements": [
             {
-              "text": "Led the end-to-end implementation and recertification of the ISMS under ISO 27001:2022.",
+              "text": "Optimized application performance by improving database queries and backend data handling, cutting response times by more than 50%.",
+              "highlight": true,
+              "stat": { "before": 100, "after": 50, "suffix": "%" }
+            },
+            {
+              "text": "Implemented CI/CD pipelines to automate code deployment across environments (development, QA, production), removing manual steps and handoff errors.",
               "highlight": false
             },
             {
-              "text": "Reduced critical risk findings from 37% to 15% (from 37 to 9 findings) in 12 months.",
-              "highlight": true
-            },
-            {
-              "text": "Performed internal security testing (Nmap, Burp Suite, sqlmap, Metasploit) on critical APIs and services.",
+              "text": "Developed new applications with a focus on end-user usability, taking part from requirements gathering through to deployment.",
               "highlight": false
             },
             {
-              "text": "Led incident response for a confidentiality-impacting incident: containment, technical analysis, and post-mortem, applying NIST 800-61 and ISO 27035.",
+              "text": "Built web and mobile interfaces with Vue, React, Next.js and React Native, and backend services with NestJS, Node.js and Django on PostgreSQL.",
               "highlight": false
             },
             {
-              "text": "Designed ISO 27002 / IEC 62443 controls for OT/ICS environments: hardening (CIS Benchmarks), centralized logging, access management, and endpoint protection.",
+              "text": "Deployed and maintained applications on AWS: EC2 instances, S3 storage, and Lambda functions for decoupled processes, plus content delivery via CloudFront with caching and access control policies.",
               "highlight": false
             },
             {
-              "text": "Automated log analysis using Python, Bash, and PowerShell scripts.",
+              "text": "Built security measures into both the pipeline and the applications, applying secure development criteria.",
               "highlight": false
             },
             {
-              "text": "Designed and delivered information security awareness training.",
+              "text": "Coordinated with multidisciplinary teams (product, QA, infrastructure, IoT) to align deliveries and priorities, translating requirements between technical and business areas.",
               "highlight": false
             }
           ]
@@ -392,44 +426,52 @@
     },
     "projects": {
       "heading": "Projects & case studies",
-      "kicker": "Internal work with operational impact",
-      "note": "Projects developed in a professional context. No public repositories due to client confidentiality.",
+      "kicker": "Real work, measurable impact",
+      "note": "Cases developed in a professional context: no public repositories due to client confidentiality, except where noted.",
       "items": [
         {
-          "id": "toolkit-sgsi",
-          "title": "Internal ISO 27001 ISMS Toolkit",
-          "description": "Internal framework to standardize Information Security Management System operations: reusable policies, procedures, and risk matrices, built to accelerate ISO 27001:2022 implementation and recertification in industrial environments.",
-          "tags": ["ISO 27001", "ISMS", "Risk management", "Compliance"],
-          "status": "Internal project",
+          "id": "perf-backend",
+          "title": "Production performance optimization",
+          "description": "Diagnosed and rewrote the system's most expensive queries along with backend data handling: indexes, N+1 query removal, and real pagination in API responses. The result was a drop of more than 50% in response times, without changing the API's public contract.",
+          "tags": ["PostgreSQL", "Node.js", "NestJS", "Performance", "REST APIs"],
+          "status": "Professional case",
           "link": null
         },
         {
-          "id": "ir-playbooks",
-          "title": "Operational Incident Response Playbooks",
-          "description": "A set of incident response playbooks for OT environments, aligned with NIST 800-61 and MITRE ATT&CK, built to standardize containment, eradication, and recovery for security incidents.",
-          "tags": ["NIST 800-61", "MITRE ATT&CK", "OT/ICS", "Incident Response"],
-          "status": "Internal project",
+          "id": "cicd-pipelines",
+          "title": "Multi-environment CI/CD pipelines",
+          "description": "Designed and implemented pipelines that automate code deployment across development, QA, and production, with build, test, and release stages, secure secret handling, and hardening of the pipeline itself. They removed manual steps and handoff errors between environments.",
+          "tags": ["CI/CD", "Docker", "AWS", "GitHub Actions", "Secure development"],
+          "status": "Professional case",
           "link": null
         },
         {
-          "id": "coming-soon",
-          "title": "Coming soon",
-          "description": "New offensive security research project currently in progress.",
-          "tags": [],
-          "status": "Coming soon",
+          "id": "apps-web-movil",
+          "title": "Custom web and mobile applications",
+          "description": "End-to-end development of client applications: requirements gathering, API design, interfaces in Vue, React or Next.js, mobile apps in React Native, and deployment on AWS. Consistent focus on end-user usability and on deliveries coordinated with product, QA, and infrastructure.",
+          "tags": ["Vue", "React", "Next.js", "React Native", "TypeScript", "AWS"],
+          "status": "Professional case",
           "link": null
+        },
+        {
+          "id": "portfolio",
+          "title": "This portfolio",
+          "description": "Bilingual static site built with Astro and TypeScript, with no client-side UI framework: a pure-CSS token system, light/dark mode, i18n with native routing, a blog powered by Content Collections, and automatic deployment to GitHub Pages via GitHub Actions. The source is public.",
+          "tags": ["Astro", "TypeScript", "CSS", "i18n", "GitHub Actions"],
+          "status": "Open source",
+          "link": "https://github.com/kuch4u/KuCh4u.github.io"
         }
       ]
     },
     "certifications": {
       "heading": "Certifications & achievements",
-      "kicker": "Hands-on validation, not just theory",
+      "kicker": "Cloud, security, and constant practice",
       "featured": {
         "name": "eJPT — Junior Penetration Tester",
         "issuer": "INE Security",
         "date": "June 27, 2026",
         "credentialId": "186597779",
-        "description": "Hands-on certification validating end-to-end penetration testing skills: reconnaissance, exploitation, post-exploitation, and reporting across real networks and systems.",
+        "description": "Hands-on offensive security certification. I keep it current because it changes how I write code: knowing how an application breaks is what lets you build it with security in mind from the design stage.",
         "certificateAsset": "shared.assets.certificates.ejpt"
       },
       "list": [
@@ -483,15 +525,15 @@
       "heading": "Education",
       "items": [
         {
-          "degree": "Red Team Diploma",
-          "institution": "USACH",
-          "period": "2024–2025",
-          "detail": null
-        },
-        {
           "degree": "Bachelor's Degree in Computer Engineering",
           "institution": "INACAP",
           "period": "2016–2022",
+          "detail": null
+        },
+        {
+          "degree": "Red Team Diploma",
+          "institution": "Capacitaciones USACH",
+          "period": "2024–2025",
           "detail": null
         }
       ]
@@ -499,7 +541,7 @@
     "blog": {
       "heading": "Blog",
       "kicker": "Learning out loud",
-      "intro": "Notes, write-ups, and things I'm learning in offensive and defensive security. I write them to be useful to someone else.",
+      "intro": "Notes on full stack development: performance, architecture, CI/CD, and security applied to code. I write them to be useful to someone else.",
       "viewAll": "View all posts",
       "readingTime": "min read",
       "emptyState": "No posts published yet. Coming soon.",
@@ -513,7 +555,7 @@
     },
     "contact": {
       "heading": "Contact",
-      "subtitle": "Looking to strengthen your organization's offensive security or compliance posture? Let's talk.",
+      "subtitle": "Need someone to build, optimize, and ship your web or mobile product? Let's talk.",
       "cta": "Get in touch",
       "note": "Only professional contact channels are published. No phone number or address is shared.",
       "channels": [
@@ -526,7 +568,7 @@
       ]
     },
     "imagesAlt": {
-      "logo": "Nicolás Cartagena logo, Cybersecurity Engineer",
+      "logo": "Nicolás Cartagena logo, Full Stack Engineer",
       "ejptCertificate": "eJPT — Junior Penetration Tester certificate issued by INE Security to Nicolás Cartagena",
       "ctfCertificate": "\"Hack The System\" CTF (Hack The Box) certificate, team radiator springs, ranked 369 of 1,323"
     }
