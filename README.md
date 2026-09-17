@@ -1,4 +1,4 @@
-# Portafolio Full Stack — Nicolás Cartagena
+# Portafolio de Ciberseguridad — Nicolás Cartagena
 
 Portafolio personal, construido con **[Astro](https://astro.build)**, bilingüe
 (ES/EN), dark-first, siguiendo un sistema de diseño propio tipo "terminal

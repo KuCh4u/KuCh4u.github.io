@@ -18,7 +18,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = getTranslations(locale);
 const ui = getUiStrings(locale);
-const stackCategory = t.skills.categories.find((c: { id: string }) => c.id === 'languages');
+const stackCategory = t.skills.categories.find((c: { id: string }) => c.id === 'tools');
 ---
 
 <Hero
